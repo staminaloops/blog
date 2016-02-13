@@ -1,5 +1,5 @@
 theme="material-design"
-baseurl = "/"
+baseurl = "http://undefinedisnotafunction.netlify.com"
 languageCode = "en-us"
 title = "Undefined is not a function"
 MetaDataFormat = "toml"
