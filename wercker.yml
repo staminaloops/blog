@@ -4,4 +4,13 @@ build:
     - arjen/hugo-build:
         version: "1.8.1"
         theme: material-design
+        config: config.toml
         flags: --buildDrafts=true
+deploy:
+  steps:
+    - install-packages:
+        packages: git ssh-client
+    - lukevivier/gh-pages@0.2.1:
+        token: $GIT_TOKEN
+        domain: staminaloops.github.io
+        basedir: public
