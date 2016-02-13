@@ -4,9 +4,79 @@ nav ul a,
 nav .brand-logo {
   color: #444;
 }
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 p {
   line-height: 2rem;
+  font-weight: 300;
 }
+
+strong, b {
+  font-weight: 700;
+}
+
+.custom-post h1 {
+  color: #26a69a;
+  font-size: 2.92rem;
+}
+
+.custom-post h2 {
+  color: #00838f;
+  font-size: 2.28rem;
+}
+
+.custom-post h3 {
+  color: #00838f;
+  font-size: 1.64rem;
+}
+
+.custom-post h4 {
+  color: #00838f;
+  font-size: 1rem;
+}
+
+a {
+  color: #0097A7;
+}
+
+.chip {
+  background-color: transparent;
+  border-color: #E91E63;
+  border-width: 1.5px;
+  border-style: solid;
+}
+
+.chip:hover {
+  background-color: #E91E63;
+}
+
+.chip a {
+    color: #E91E63;
+}
+
+.chip:hover a {
+  color: white;
+}
+
+
+.toc > nav > ul {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.toc a {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+nav {
+  box-shadow: none;
+}
+/* */
 
 .button-collapse {
   color: #26a69a;
@@ -18,9 +88,10 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+
+.parallax-container .section {
+  width: 100%;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -45,4 +116,8 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
 }

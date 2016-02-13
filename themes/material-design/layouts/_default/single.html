@@ -1,20 +1,23 @@
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL }}
-
 <div class="container">
   <div class="section">
 
     <div class="row">
       <div class="col s12">
-        <div class="card-panel">
-          <h4>{{ .Title }}</h4>
-          <p>
+        <div class="card-panel custom-post">
           {{if .Params.categories }}
             {{ range $index, $category := .Params.categories }}
-              <a href="{{$baseurl}}/categories/{{ $category | urlize }}/">{{ $category }}</a>
+              <div class="chip">
+                <a href="{{$baseurl}}/categories/{{ $category | urlize }}/">{{ $category }}</a>
+              </div>
             {{ end }}
           {{end}} 
-          </p>
+          <h1>{{ .Title }}</h1>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <a>TOC<a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a></a>
           <p>{{ .Content }}</p>
           <p>{{ .Date.Format "2 Jan 2006" }}
             {{if .Params.tags }}
@@ -23,6 +26,7 @@
               {{ end }}
             {{end}}
           </p>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="StaminaLoops">Tweet</a>
           {{ with .Site.DisqusShortname }}
             {{ partial "disqus.html" . }}
           {{ end }}
