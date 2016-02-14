@@ -27,7 +27,7 @@ From [here](<http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downlo
 ---
 
 Alternative (not tested, but taken from [google developers](http://developer.android.com/sdk/installing/index.html?pkg=tools)):  
-*Here are the steps to install Java:
+Here are the steps to install Java:
 If you are running a 64-bit distribution on your development machine, you need to install additional packages first. For Ubuntu 13.10 (Saucy Salamander) and above, install the libncurses5:i386, libstdc++6:i386, and zlib1g:i386 packages using apt-get:*
 ```
 sudo dpkg --add-architecture i386
@@ -83,6 +83,7 @@ git checkout v4.4.0  # the latest stable release
 make
 sudo make install
 ```
+
 Check that is installed with `watchman -v`
 
 ## Install Genymotion
@@ -93,6 +94,7 @@ Check that is installed with `watchman -v`
 2. Register https://cloud.genymotion.com/ (free for personal use).
 3. Download the installer after your login the website: https://www.genymotion.com/download/.
 4. If you save the installer in the default Downloads folder, press Ctrl+Alt+T to open terminal. When it opens, run below commands one by one:
+
 ```
 cd ~/Downloads/
 
@@ -100,14 +102,17 @@ chmod +x genymotion-2.1.0_x64.bin
 
 ./genymotion-2.1.0_x64.bin
 ```
+
 It first navigate to Downloads folder, then give executable permission, and finally start the installer. **Of course you need to change the file-name version to yours**.
 
 cd to installation directory, then run: `./genymotion`
 
 ## Install React Native
+
 ```
 npm install -g react-native-cli
 ```
+
 ## Start a project
 
 ```
@@ -118,10 +123,13 @@ This command fetches the React Native source code and dependencies and then crea
 
 ## Develop
 1) **Init genymotion**
+
 ```
 <path_where_you_unpacked_genymotion-2.1.0_x64.bin>/genymotion/genymotion
 ```
+
 Example if you save the installer in the default Downloads folder:
+
 ```
 ~/Downloads/genymotion/genymotion
 ```
@@ -130,11 +138,19 @@ Choose an emulator and download it.
 
 2) **On a new terminal run from AwesomeProject root directory:**
 
-`touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties`
+```
+touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
+```
 
-`react-native run-android` to install the generated app on your emulator and start the Node server which enables live code reloading.
+```
+react-native run-android
+``` 
 
-`react-native start`
+to install the generated app on your emulator and start the Node server which enables live code reloading.
+
+```
+react-native start
+```
 
 **Check your Genymotion.**  To see your changes you have to open the rage-shake-menu (CRTL+M for Genymotion), and then press Reload JS. Enable live reload for.. live reload.
 

@@ -43,22 +43,22 @@ a {
 }
 
 .chip {
-  background-color: transparent;
-  border-color: #E91E63;
-  border-width: 1.5px;
+  background-color: #F9A825;
+  border-color: #FDD835;
+  border-width: 1px;
   border-style: solid;
 }
 
 .chip:hover {
-  background-color: #E91E63;
+  background-color: white;
 }
 
 .chip a {
-    color: #E91E63;
+  color: white;
 }
 
 .chip:hover a {
-  color: white;
+  color: #F9A825;
 }
 
 
@@ -75,6 +75,16 @@ a {
 
 nav {
   box-shadow: none;
+  background-color: transparent;
+}
+
+.description {
+  text-transform: uppercase;
+}
+
+.teal-text.text-lighten-2 {
+  color: #FDD835 !important;
+  text-shadow: 0px 2px #FDD835;
 }
 /* */
 
@@ -107,6 +117,10 @@ nav {
   #index-banner .section {
     top: 0;
   }
+
+  .teal-text.text-lighten-2 {
+    font-size: 3.2rem;
+  }
 }
 
 
@@ -116,6 +130,7 @@ nav {
 
 footer.page-footer {
   margin: 0;
+  background-color: #FDD835;
 }
 
 h1, h2, h3, h4 {
