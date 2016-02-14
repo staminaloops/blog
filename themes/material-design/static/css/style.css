@@ -1,4 +1,4 @@
-/* Custom Stylesheet */
+/* Custom Stylesheet #04282F */
 
 nav ul a,
 nav .brand-logo {
@@ -9,7 +9,11 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-p {
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+p, li {
   line-height: 2rem;
   font-weight: 300;
 }
@@ -17,6 +21,11 @@ p {
 strong, b {
   font-weight: 700;
 }
+
+a {
+  color: #0097A7;
+}
+
 
 .custom-post h1 {
   color: #26a69a;
@@ -38,8 +47,9 @@ strong, b {
   font-size: 1rem;
 }
 
-a {
-  color: #0097A7;
+.custom-post ul li {
+  list-style-type: circle;
+  list-style-position: inside;
 }
 
 .chip {
@@ -59,6 +69,10 @@ a {
 
 .chip:hover a {
   color: #F9A825;
+}
+
+.list-title {
+  font-size: 1.8rem;
 }
 
 
@@ -131,8 +145,4 @@ nav {
 footer.page-footer {
   margin: 0;
   background-color: #FDD835;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Orbitron', sans-serif;
 }

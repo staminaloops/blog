@@ -7,13 +7,13 @@ summary = "Install React Native Android on Ubuntu - a step by step guide"
 
 +++
 **Make sure you have the latest version of node and npm installed. If not:**
-```
+```bash
   curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
   sudo apt-get install -y nodejs
 ```
 
 Afterwards, you should install/upgrade your npm:
-```
+```bash
   npm install -g npm
 ```
 
@@ -29,17 +29,17 @@ From [here](<http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downlo
 Alternative (not tested, but taken from [google developers](http://developer.android.com/sdk/installing/index.html?pkg=tools)):  
 Here are the steps to install Java:
 If you are running a 64-bit distribution on your development machine, you need to install additional packages first. For Ubuntu 13.10 (Saucy Salamander) and above, install the libncurses5:i386, libstdc++6:i386, and zlib1g:i386 packages using apt-get:*
-```
+```bash
 sudo dpkg --add-architecture i386
 sudo apt-get update
 sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 ```
 *For earlier versions of Ubuntu, install the ia32-libs package using apt-get:*
-```
+```bash
 apt-get install ia32-libs
 ```
 *Next, install Java:*
-```
+```bash
 apt-get install sun-java6-jdk
 ```
 ---
@@ -48,13 +48,15 @@ apt-get install sun-java6-jdk
 
  - Download from here: https://developer.android.com/sdk/index.html#Other
  - add this to your ~/.bashrc, ~/.bash_profile or whatever your shell uses:
-```
+
+```bash
 export ANDROID_HOME=<path_where_you_unpacked_android_sdk>
 ```
+
 **Configure your SDK**
 
 - Open the Android SDK Manager
-```
+```bash
 cd <path_where_you_unpacked_android_sdk>/tools
 ./android
 ```
@@ -69,7 +71,7 @@ cd <path_where_you_unpacked_android_sdk>/tools
 ## Install watchman  
 Facebook recommend installing [watchman](https://facebook.github.io/watchman/), otherwise you might hit a node file watching bug. You will need autoconf and automake. You may optionally build watchman with pcre and python support. For python support, you will also need setuptools and may need to install a python-dev or python-devel package.
 
-```
+```bash
 sudo apt-get install automake
 sudo apt-get install autoconf
 sudo apt-get install python-setuptools
@@ -95,7 +97,7 @@ Check that is installed with `watchman -v`
 3. Download the installer after your login the website: https://www.genymotion.com/download/.
 4. If you save the installer in the default Downloads folder, press Ctrl+Alt+T to open terminal. When it opens, run below commands one by one:
 
-```
+```bash
 cd ~/Downloads/
 
 chmod +x genymotion-2.1.0_x64.bin
@@ -109,13 +111,13 @@ cd to installation directory, then run: `./genymotion`
 
 ## Install React Native
 
-```
+```bash
 npm install -g react-native-cli
 ```
 
 ## Start a project
 
-```
+```bash
 react-native init AwesomeProject
 ```
 
@@ -124,13 +126,13 @@ This command fetches the React Native source code and dependencies and then crea
 ## Develop
 1) **Init genymotion**
 
-```
+```bash
 <path_where_you_unpacked_genymotion-2.1.0_x64.bin>/genymotion/genymotion
 ```
 
 Example if you save the installer in the default Downloads folder:
 
-```
+```bash
 ~/Downloads/genymotion/genymotion
 ```
 
@@ -138,17 +140,17 @@ Choose an emulator and download it.
 
 2) **On a new terminal run from AwesomeProject root directory:**
 
-```
+```bash
 touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
 ```
 
-```
+```bash
 react-native run-android
 ``` 
 
 to install the generated app on your emulator and start the Node server which enables live code reloading.
 
-```
+```bash
 react-native start
 ```
 

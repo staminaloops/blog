@@ -11,16 +11,9 @@
   {{end}}
   <link href="{{.Site.BaseURL}}/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{{.Site.BaseURL}}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <link href="{{.Site.BaseURL}}/css/prism.css" type="text/css" rel="stylesheet"/>
   <link href='//fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <style type="text/css">
-  {{if .Site.Params.footerCover}}
-    footer.page-footer{background-image: url({{.Site.BaseURL}}/{{.Site.Params.footerCover}});}
-  {{else}}
-    footer.page-footer{background-image: url({{.Site.BaseURL}}/images/default.png);}
-  {{end}}
-  </style>
 </head>
 <body>
   <ul id="slide-out" class="side-nav">
