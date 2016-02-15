@@ -19,6 +19,3 @@ copyright = "2016 staminaloops"
 
 [permalinks]
   post = "/:year/:month/:day/:title/" # optional
-
-[blackfriday]
-  hrefTargetBlank = true

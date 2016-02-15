@@ -52,6 +52,10 @@ a {
   list-style-position: inside;
 }
 
+.custom-post img {
+  width: 100%;
+}
+
 .chip {
   background-color: #F9A825;
   border-color: #FDD835;
@@ -80,8 +84,13 @@ a {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
+.toc > nav > ul > li > ul > li {
+  padding: 0;
+}
+
+
 .toc a {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: hidden;

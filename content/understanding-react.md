@@ -2,16 +2,17 @@
 Categories = ["React"]
 Tags = ["react", "javascript", "frontend"]
 date = "2016-02-14T18:51:12Z"
-summary = "There are many tutorials out there. This one tries to give you the essencials for the basic understanding of React and best practices."
+summary = "There are many tutorials out there. This one tries to give you the essentials for the basic understanding of React and best practices."
 title = "Understanding React.js"
+baseurl = "http://undefinedisnotafunction.netlify.com"
 
 +++
 
-It was written based on many other blog posts, and hope it gives you a general view of the most important concepts.
+It was written based on many other blog posts as an introduction of React to my team. I hope it gives you a general view of the most important concepts.
 
 Note that to use React you don't need to use all the ecosystem, which many times, it's what makes difficult to begin. However, you should know javaScript and I encourage you to learn ES6 and keep updated programming practices.
 
-This post is targeted at people who know JS, including the concepts of modular JS.
+This post is targeted at people who know ES6, including the concepts of modular JS (it's just JavaScript!).
 
 ## General Concepts
 
@@ -36,9 +37,12 @@ Components have three main parts of their lifecycle:
 - Unmounting: A component is being removed from the DOM.
 
 
+*(adapted from [here](http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/))*
 ```js
+
 import React from 'react';
 
+// this will be our component:
 const MyReactComponent = React.createClass({
 
   propTypes: {
@@ -129,12 +133,12 @@ export default MyReactComponent
 
 ```
 
-Lifecycle diagram - [See a bigger image](../img/react-lifecycle.jpg)
-![React Lifecycle](../img/react-lifecycle.jpg)
+Lifecycle diagram - [See a bigger image](/images/react-lifecycle.jpg)
+![React Lifecycle](/images/react-lifecycle.jpg)
 
 You can now use this component:
 
-- As standalone (although this is usually done with React Router)
+- As standalone
 ```js
 import ReactDOM from 'react-dom'
 import MyReactComponent from './MyReactComponent.jsx'
@@ -220,32 +224,13 @@ The main responsibility of a Component is to translate raw data into rich HTML. 
 
 **Props** – short for "properties". They're passed as attributes in JSX syntax from the 'parent/owner component'. You should think of these as immutable within the component, that is, never write to `this.props`. They just change according to the state change.
 
-### Should this Component have _state_? 
-(*adapted from [here](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md) and [here](https://facebook.github.io/react/docs/thinking-in-react.html)*)
-
-_state_ is optional. Since _state_ increases complexity and reduces predictability, a Component without _state_ is preferable. Even though you clearly can't do without state in an interactive app, you should avoid having too many _Stateful Components._
-
-#### Component types
-
-* **Stateless Component** — Only _props_, no _state._ There's not much going on besides the `render()` function and all their logic revolves around the _props_ they receive. This makes them very easy to follow (and test for that matter). We sometimes call these *dumb* or *presentational* components.
-* **Stateful Component** — Both _props_ and _state._ We also call these _state managers_ or *Containers Components*. They are in charge of client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of _Stateful Components_ (usually in a router component), while all visualization and formatting logic should move downstream into as many _Stateless Components_ as possible.
-
-#### So, for each piece of state in your application:
-
-- Identify every component that renders something based on that state.
-- Find a common owner component (a single component above all the components that need the state in the hierarchy).
-- Either the common owner or another component higher up in the hierarchy should own the state.
-- If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
-
-More about this on the Redux section: [redux.md](redux/#react-bindings-for-redux)
-
 ## Components Composition
 
 React is all about building reusable components. In fact, the only thing you do is build components. Since they're so encapsulated, components make code reuse, testing, and separation of concerns easy.
 
 The data always flows from top to bottom - **unidirectional data-flow** - as `props`.
 
-#### Owner and parent-children relation
+### Owner and parent-children relation
 In React, an owner is the component that sets the `props` of other components. More formally, if a component `X` is created in component `Y`'s `render()` method, it is said that `X` is owned by `Y`.
 
 ```js
@@ -292,48 +277,103 @@ const ParentComponent = React.createClass({
 </ParentComponent>
 ```
 
+### Should this Component have _state_? 
+(*adapted from [here](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md) and [here](https://facebook.github.io/react/docs/thinking-in-react.html)*)
+
+_state_ is optional. Since _state_ increases complexity and reduces predictability, a Component without _state_ is preferable. Even though you clearly can't do without state in an interactive app, you should avoid having too many _Stateful Components._
+
+#### Component types
+
+* **Stateless Component** — Only _props_, no _state._ There's not much going on besides the `render()` function and all their logic revolves around the _props_ they receive. This makes them very easy to follow (and test for that matter). We sometimes call these *dumb* or *presentational* components.
+* **Stateful Component** — Both _props_ and _state._ We also call these _state managers_ or *Containers Components*. They are in charge of client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of _Stateful Components_ (usually in a router component), while all visualization and formatting logic should move downstream into as many _Stateless Components_ as possible.
+
+#### So, for each piece of state in your application:
+
+- Identify every component that renders something based on that state.
+- Find a common owner component (a single component above all the components that need the state in the hierarchy).
+- Either the common owner or another component higher up in the hierarchy should own the state.
+- If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+
 ## Flow Diagram
 
 **Use props (this.props) to access parameters passed from the parent/owner. Use state (this.state) to manage dynamic data.**
 
 Follow the colors to understand the state and props flow between components.
-[See a bigger version](../img/react-101.jpg)
+[See a bigger version](/images/react-101.jpg)
 
-![React 101](../img/react-101.jpg)
+![React 101](/images/react-101.jpg)
 
-## You can write your components in 3 different ways:
+## The ref returned from ReactDOM.render
+Not to be confused with the `render()` function that you define on your component (and which returns a virtual DOM element), `ReactDOM.render()` will return a reference to your component's backing instance.
 
-**React.createClass({ })**: We pass some methods in a JavaScript object to React.createClass() to create a new React component. This methods will have autobinding of `this`: every method is automatically bound to its component instance. You can use Mixins. You CAN use ES6 syntax.
+In order to get a reference to a React component, you can either use `this` to get the current React component, or you can use a `ref` to get a reference to a component you own.
+
+These refs (references) are especially useful when you need to: find the DOM markup rendered by a component (for instance, to position it absolutely), use React components in a larger non-React application, or transition your existing codebase to React.
+
+If you need access to the underlying DOM node for that component, you can use `ReactDOM.findDOMNode` as an "escape hatch" but we don't recommend it since it breaks encapsulation and in almost every case there's a clearer way to structure your code within the React model.
+
+```jsx
+const MyComponent = React.createClass({
+  handleClick() {
+    // Explicitly get the input value using the raw DOM API.
+    const inputValue = this.refs.myInput.value;
+    console.log(inputValue);
+  },
+
+  render() {
+    // The ref attribute saves a reference to the
+    // component to this.refs.myInput **when the component is mounted**.
+    return (
+      <div>
+        <input type="text" ref="myInput" defaultValue="Hello!" />
+        <button onClick={this.handleBtnClick}>Click Me</button>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <MyComponent />,
+  document.getElementById('example')
+);
+```
+
+## But... Why do I see so many different ways of writing a Component? 
+
+**You can write your components in 3 different ways:**
+
+**React.createClass({ })**: The one we have being using. We pass some methods in a JavaScript object to React.createClass() to create a new React component. This methods will have autobinding of `this`: every method is automatically bound to its component instance. You can use Mixins. You CAN use ES6 syntax.
 
 ```jsx
 import React from 'react';
 
 const MyComponent = React.createClass({
 
+  propTypes: {
+
+  },
+
   getInitialState() {
     return {
-      imGoingToSay: 'Hello'
+      
     };
-  },
+  }, //<--- comma! Its an object
 
   getDefautProps() {
     return {
-
+      
     };
-  }
+  },
 
   handleBtnClick() {
-    // `this` here refers to the component instance 
     console.log(this);
-    this.setState({
-      imGoingToSay: 'Goodbye'
-    });
-  }, //<--- comma! Its an object
+    // `this` here refers to the component instance
+  },
 
   render() {
     return (
       <div>
-        <p>{this.state.imGoingToSay}</p>
+        <p>{this.props.someProps}</p>
         <button onClick={this.handleBtnClick}>Click Me</button>
       </div>
     );
@@ -341,23 +381,133 @@ const MyComponent = React.createClass({
 });
 ```
 
-**ES6 Class**: Real JS ES6 classes. No autobinding. No Mixins, but you can use HOC.
+**ES6 Class**: Real JS ES6 classes. No autobinding. No Mixins, but you can use [HOC](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.x1p1jvloc). No getInitialState or componentWillMount - state, getDefaultProps and propTypes are really just properties on the constructor.
 
 ```js
 import React from 'react';
 
 class MyComponent extends React.Component{
+  
+  // pass in the props of React.Component
+  constructor(props) {
+    super(props);
+    // this is equivalent to getInitialState
+    this.state = {
+      
+    };
+  }
 
   handleBtnClick() {
     console.log(this);
     // `this` here refers to the component instance *after* you bind it
-    ...
   }
 
   render() {
     return (
-      <button onClick={this.handleBtnClick.bind(this)}>Click</button>
+      <div>
+        <p>{this.props.someProps}</p>
+        <button onClick={this.handleBtnClick.bind(this)}>Click Me</button>
+      </div>
     );
   }
 }
+
+MyComponent.propTypes = {  };
+MyComponent.defaultProps = {  };
+
 ```
+
+In ES6 classes, you can bind the methods to the instance of your component in different ways that the previous one:
+
+```jsx
+// On the constructor
+
+class MyComponent extends React.Component{
+  
+  constructor(props) {
+    super(props);
+    this.handleBtnClick = this.handleBtnClick.bind(this);
+  }
+
+  handleBtnClick() {
+    console.log(this);
+  }
+
+  render() {
+    return (
+      <div>
+        <p>{this.props.someProps}</p>
+        <button onClick={this.handleBtnClick}>Click Me</button>
+      </div>
+    );
+  }
+}
+
+// Using ES7+ Property Initializers + arrow functions
+
+class MyComponent extends React.Component{
+  
+  constructor(props) {
+    super(props);
+  }
+
+  handleBtnClick = () => {
+    console.log(this);
+  }
+
+  render() {
+    return (
+      <div>
+        <p>{this.props.someProps}</p>
+        <button onClick={this.handleBtnClick}>Click Me</button>
+      </div>
+    );
+  }
+}
+
+```
+
+**Stateless functional components**: Since React 0.14, you can take `props` as a function argument and return the element you want to render. If you **don't** have state or refs, or your component doesn't need lifecycle methods, prefer this method of defining a component:
+
+```jsx
+// A functional component using an ES2015 (ES6) arrow function:
+const MyComponent = (props) => {
+  const handleBtnClick = () => {
+    console.log(this);
+  };
+
+  return (
+    <div>
+      <p>{props.someProps}</p>
+      <button onClick={handleBtnClick}>Click Me</button>
+    </div>
+  );
+};
+
+// Or with destructuring:
+const MyComponent = ({someProps}) => {
+  const handleBtnClick = () => {
+    console.log(this);
+  };
+
+  return (
+    <div>
+      <p>{someProps}</p>
+      <button onClick={handleBtnClick}>Click Me</button>
+    </div>
+  );
+};
+
+MyComponent.propTypes = {  };
+MyComponent.defaultProps = {  };
+```
+
+## Where to go next?
+
+Checkout this blog posts:
+
+* [React ecosystem](/react-ecosystem)
+* [React + Redux === &#9829;](/react-Redux)  
+
+And all the post in the [React](/categories/react/) category.
+
