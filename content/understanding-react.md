@@ -507,7 +507,7 @@ MyComponent.defaultProps = {  };
 Checkout this blog posts:
 
 * [React ecosystem](/react-ecosystem)
-* [React + Redux === &#9829;](/react-Redux)  
+* [React + Redux === &#9829;](./)  --> comming soon
 
-And all the post in the [React](/categories/react/) category.
+And all the post in the [React](/categories/react/) category. --> more comming soon
 

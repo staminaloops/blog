@@ -6,12 +6,17 @@
   <title>{{ .Title }}</title>
   {{if .Params.summary}}
     <meta name="description" content="{{ .Params.summary}}">
+    <meta name="twitter:description" content="{{ .Params.summary}}">
   {{else}}
     <meta name="description" content="{{.Site.Params.description}}">
+    <meta name="twitter:description" content="{{.Site.Params.description}}">
   {{end}}
-  <link href="{{.Site.BaseURL}}/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{{.Site.BaseURL}}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{{.Site.BaseURL}}/css/prism.css" type="text/css" rel="stylesheet"/>
+  <link ref="canonical" href="{{.Permalink}}">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@StaminaLoops" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+  <meta name="twitter:image" content="{{.Site.BaseURL}}/images/Undefined-is-not-a-function.png" />
+  <link href="{{.Site.BaseURL}}/dist/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href='//fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
