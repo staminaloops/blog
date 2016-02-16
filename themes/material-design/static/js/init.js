@@ -1,3 +1,9 @@
+// Don't force https when serving the website locally
+if (!(window.location.host.startsWith("localhost")) && (window.location.protocol != "https:")) {
+  window.location.protocol = "https";
+}
+    
+
 (function($){
   $(function(){
 
@@ -10,4 +16,3 @@
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
-
