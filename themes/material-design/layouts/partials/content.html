@@ -12,12 +12,14 @@
       {{if .Params.categories }}
         {{ range $index, $category := .Params.categories }}
           <span class="chip">
-            <a href="{{$baseurl}}/categories/{{ $category | urlize }}/">{{ $category }}</a>
+            <a href="{{$baseurl}}/categories/{{ $category | urlize }}/">
+              <i class="mdi-action-loyalty"></i> {{ $category }}
+            </a>
           </span>
         {{ end }}
       {{end}} 
       </p>
-      <p>{{ .Params.summary }}</p>
+      <p>{{ .Params.summary }} <a href="{{ .Permalink }}"><i class="mdi-navigation-arrow-forward"></i></a></p>
       <p>
       {{ .Date.Format "2 Jan 2006" }}
       {{if .Params.tags }}

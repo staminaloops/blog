@@ -1,11 +1,12 @@
 +++
 Categories = ["React Native"]
-Tags = ["react native","ubuntu","android"]
+Tags = ["reactnative","ubuntu","android"]
 date = "2016-02-13T16:23:23+09:00"
 title = "Install React Native Android on Ubuntu"
-summary = "Install React Native Android on Ubuntu - a step by step guide"
+summary = "Install React Native Android on Ubuntu - This can be challenging. Here is a step by step guide."
 
 +++
+
 **Make sure you have the latest version of node and npm installed. If not:**
 ```bash
   curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -

@@ -9,7 +9,9 @@
           {{if .Params.categories }}
             {{ range $index, $category := .Params.categories }}
               <div class="chip">
-                <a href="{{$baseurl}}/categories/{{ $category | urlize }}/">{{ $category }}</a>
+                <a href="{{$baseurl}}/categories/{{ $category | urlize }}/">
+                  <i class="mdi-action-loyalty"></i> {{ $category }}
+                </a>
               </div>
             {{ end }}
           {{end}} 
@@ -20,14 +22,35 @@
           <a>TOC<a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a></a>
           <p>{{ .Params.summary }}</p>
           <p>{{ .Content }}</p>
-          <p>{{ .Date.Format "2 Jan 2006" }}
+          <p class="grey-text text-darken-2">{{ .Date.Format "2 Jan 2006" }}
             {{if .Params.tags }}
               {{ range $index, $tag := .Params.tags }}
                 <a href="{{$baseurl}}/tags/{{ $tag | urlize }}/">#{{ $tag }}</a>
               {{ end }}
             {{end}}
           </p>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="StaminaLoops">Tweet</a>
+          <h3> Share
+            <a href="https://twitter.com/share" 
+              class="twitter-share-button"
+              data-url="{{.Permalink}}"
+              data-related="StaminaLoops"
+              data-via="StaminaLoops"
+              data-hashtags="undefinedisnotafunction, {{ range $index, $tag := .Params.tags }}
+                  {{ $tag }},
+                {{ end }}">
+              Tweet
+            </a>
+          </h3>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <h4>About <a href="https://staminaloops.github.io/">staminaloops</a></h4>
+          <div class="col s3 m1">
+            <a href="https://staminaloops.github.io/"><img src="{{$baseurl}}/images/logo-stamina-loops.png" alt="staminaloops"></a>
+          </div>
+          <div class="col s9 m11">
+            <p>Someone once said <i>"She's very enthusiastic and eager to test everything tech-related. Loves to get every front-end platform working automagically. She programmed her own Pebble and comes from the beautiful region of Alentejo."</i></p>
+          </div>
           {{ with .Site.DisqusShortname }}
             {{ partial "disqus.html" . }}
           {{ end }}

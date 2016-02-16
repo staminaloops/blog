@@ -1,14 +1,13 @@
 +++
 Categories = ["React"]
-Tags = ["react", "javascript", "frontend"]
+Tags = ["reactjs", "javascript", "frontend"]
 date = "2016-02-14T18:51:12Z"
-summary = "There are many tutorials out there. This one tries to give you the essentials for the basic understanding of React and best practices."
+summary = "There are many good tutorials out there. This one was written based on them as an introduction of React to my team."
 title = "Understanding React.js"
-baseurl = "http://undefinedisnotafunction.netlify.com"
 
 +++
 
-It was written based on many other blog posts as an introduction of React to my team. I hope it gives you a general view of the most important concepts.
+It tries to give you the essentials for the basic understanding of React and best practices. I hope it gives you a general view of the most important concepts.
 
 Note that to use React you don't need to use all the ecosystem, which many times, it's what makes difficult to begin. However, you should know javaScript and I encourage you to learn ES6 and keep updated programming practices.
 
@@ -228,7 +227,7 @@ The main responsibility of a Component is to translate raw data into rich HTML. 
 
 React is all about building reusable components. In fact, the only thing you do is build components. Since they're so encapsulated, components make code reuse, testing, and separation of concerns easy.
 
-The data always flows from top to bottom - **unidirectional data-flow** - as `props`.
+The data should always flow from top to bottom - as `props`.
 
 ### Owner and parent-children relation
 In React, an owner is the component that sets the `props` of other components. More formally, if a component `X` is created in component `Y`'s `render()` method, it is said that `X` is owned by `Y`.

@@ -1,9 +1,9 @@
 +++
 Categories = ["React"]
-Tags = ["React", "Babel", "Webpack", "ESlint", "React-Router", "Redux", "Tests"]
+Tags = ["reactjs", "javascript", "frontend"]
 date = "2016-02-15T15:25:31Z"
-summary = "Things move fast. Here are some useful links and a summary of the so called React Ecosystem."
-title = "React Ecosystem"
+summary = "Things move fast. It's web development! Here are some useful links and a summary of the so called React Ecosystem."
+title = "React Ecosystem - A summary"
 
 +++
 
@@ -85,13 +85,20 @@ Keep react-router and redux in sync - [react-router-redux](https://github.com/re
 #### Redux DevTools
 I also suggest you to use this great and fun [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension) browser extension. You development workflow will never be the same :)
 
-## 4) Consider Server side rendering
+## 4) Choose your client-server interaction
+
+In today's world there are two dominant architectural styles for client-server interaction: REST and ad hoc endpoints, don't forgetting [Websockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
+
+But if you feel adventurous you can try [GraphQL](http://graphql.org/) - a data query language and runtime -, together with [Relay](https://facebook.github.io/relay/) - a JS framework for building data-driven React applications, both from Facebook.
+[This tutorial](https://learngraphql.com/) and [this post](https://medium.com/@clayallsopp/relay-101-building-a-hacker-news-client-bb8b2bdc76e6#.n1zz7ywyb) should help you get started. 
+
+## 5) Consider Server side rendering
 
 *(aka [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.oz38cs3kj) (before aka Isomorphic) apps)*
 
 [Universal JavaScript](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/) means the same code runs in different environments, in this case, on the client and on the server (thank you node.js). This can help SEO and initial loading time of your SPA and can be easily achieved with [React Router SSR](https://github.com/reactjs/react-router/blob/latest/docs/guides/ServerRendering.md).
 
-## 5) Consider some tests
+## 6) Consider some tests
 
 There are some utilities (besides all major test runners and assertion libraries out there):
 
@@ -101,7 +108,7 @@ There are some utilities (besides all major test runners and assertion libraries
 - [deep-freeze](https://github.com/substack/deep-freeze) to recursively Object.freeze() on objects and functions and test immutability.
 
 
-## 6) Don't re-invent the wheel
+## 7) Don't re-invent the wheel
 
 Here are some of the great examples, tutorials and starter kits:
 
@@ -115,7 +122,7 @@ If you are looking for some external components and libraries to use on your pro
 - [https://react.rocks/](https://react.rocks/)
 - Follow [ReactJSnpm](https://twitter.com/ReactJSnpm) that publishes tweets when #ReactJS related libraries are updated on NPM
 
-## 7) Breath. It's web development
+## 8) Breathe. It's web development
 
 Yes, It's web development. Things move fast. You don't need to master everything and there will always be that brand new technology that the cool kids will gonna want to use.
 Use what you need, and what makes sense to your project. If you want, start with the basics, and as your project grows, if you feel that something is start missing, opt-in for that tools. Refactoring is easy as long as you do it in a regular basis and structure your code well.
