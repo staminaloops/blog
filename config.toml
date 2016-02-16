@@ -15,7 +15,7 @@ copyright = "2016 staminaloops"
   # optional gplus = "Your Google+ profile name" # optional
   # optional linkedin = "Your LinkedIn Name" # optional
   headerCover = "images/header.png" # optional
-  googleAnalyticsUserID = "UA-71795144-2" # optional
+  googleAnalyticsUserID = "UA-71795144-3" # optional
 
 [permalinks]
   post = "/:year/:month/:day/:title/" # optional
