@@ -298,8 +298,8 @@ export default MyReactComponent
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Lifecycle diagram - &lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-lifecycle.jpg&#34;&gt;See a bigger image&lt;/a&gt;
-&lt;img src=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-lifecycle.jpg&#34; alt=&#34;React Lifecycle&#34; /&gt;
+&lt;p&gt;Lifecycle diagram - &lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/undefinedisnotafunction/images/react-lifecycle.jpg&#34;&gt;See a bigger image&lt;/a&gt;
+&lt;img src=&#34;https://staminaloops.github.io/undefinedisnotafunction/undefinedisnotafunction/images/react-lifecycle.jpg&#34; alt=&#34;React Lifecycle&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;You can now use this component:&lt;/p&gt;
@@ -473,9 +473,9 @@ const IAmOwned = React.createClass({
 &lt;p&gt;&lt;strong&gt;Use props (this.props) to access parameters passed from the parent/owner. Use state (this.state) to manage dynamic data.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Follow the colors to understand the state and props flow between components.
-&lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-101.jpg&#34;&gt;See a bigger version&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/undefinedisnotafunction/images/react-101.jpg&#34;&gt;See a bigger version&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-101.jpg&#34; alt=&#34;React 101&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://staminaloops.github.io/undefinedisnotafunction/undefinedisnotafunction/images/react-101.jpg&#34; alt=&#34;React 101&#34; /&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&#34;the-ref-returned-from-reactdom-render:52f993fa48d79413df5978c52425f686&#34;&gt;The ref returned from ReactDOM.render&lt;/h2&gt;
