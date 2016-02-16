@@ -133,8 +133,8 @@ export default MyReactComponent
 
 ```
 
-Lifecycle diagram - [See a bigger image](/images/react-lifecycle.jpg)
-![React Lifecycle](/images/react-lifecycle.jpg)
+Lifecycle diagram - [See a bigger image](/undefinedisnotafunction/images/react-lifecycle.jpg)
+![React Lifecycle](/undefinedisnotafunction/images/react-lifecycle.jpg)
 
 You can now use this component:
 
@@ -304,9 +304,9 @@ _state_ is optional. Since _state_ increases complexity and reduces predictabili
 **Use props (this.props) to access parameters passed from the parent/owner. Use state (this.state) to manage dynamic data.**
 
 Follow the colors to understand the state and props flow between components.
-[See a bigger version](/images/react-101.jpg)
+[See a bigger version](/undefinedisnotafunction/images/react-101.jpg)
 
-![React 101](/images/react-101.jpg)
+![React 101](/undefinedisnotafunction/images/react-101.jpg)
 
 ## The ref returned from ReactDOM.render
 Not to be confused with the `render()` function that you define on your component (and which returns a virtual DOM element), `ReactDOM.render()` will return a reference to your component's backing instance.
