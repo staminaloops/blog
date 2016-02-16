@@ -1,5 +1,5 @@
 theme="material-design"
-baseurl = "https://staminaloops.github.io/undefinedisnotafunction/"
+baseurl = "https://staminaloops.github.io/undefinedisnotafunction"
 languageCode = "en-us"
 title = "Undefined is not a function"
 MetaDataFormat = "toml"
