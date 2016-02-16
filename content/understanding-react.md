@@ -37,6 +37,7 @@ Components have three main parts of their lifecycle:
 
 
 *(adapted from [here](http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/))*
+
 ```js
 
 import React from 'react';
@@ -138,6 +139,7 @@ Lifecycle diagram - [See a bigger image](/images/react-lifecycle.jpg)
 You can now use this component:
 
 - As standalone
+
 ```js
 import ReactDOM from 'react-dom'
 import MyReactComponent from './MyReactComponent.jsx'
@@ -146,6 +148,7 @@ ReactDOM.render(<MyReactComponent />, document.getElementById('example'))
 ```
 
 - Inside another Component's `render()` method:
+
 ```js
 import React from 'react'
 import MyReactComponent from './MyReactComponent.jsx'
@@ -166,6 +169,7 @@ const MyOtherComponent = React.createClass({
 Give it [five minutes](https://signalvnoise.com/posts/3124-give-it-five-minutes).
 
 JSX lets you create JavaScript objects using HTML syntax. **Usually this is the return value of the `render()` method**. JSX is completely optional; you don't have to use JSX with React. You can create React elements in plain JavaScript using React.createElement, which takes a tag name or component, a properties object, and variable number of optional child arguments.
+
 ```js
 var child1 = React.createElement('li', null, 'First Text Content');
 var child2 = React.createElement('li', null, 'Second Text Content');
@@ -174,13 +178,15 @@ React.render(root, document.getElementById('example'));
 ```
 
 To generate a link in React using pure JavaScript you'd write:
+
 ```js
 // this is a comment
 React.createElement('a', {href: 'https://facebook.github.io/react/'}, 'Hello!')
 ```
 
 With JSX this becomes:
-```js
+
+```jsx
 {/* this is a comment */}
 <a href="https://facebook.github.io/react/">Hello!</a>
 ```
