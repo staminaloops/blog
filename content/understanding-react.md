@@ -12,7 +12,7 @@ It was written based on many other blog posts as an introduction of React to my 
 
 Note that to use React you don't need to use all the ecosystem, which many times, it's what makes difficult to begin. However, you should know javaScript and I encourage you to learn ES6 and keep updated programming practices.
 
-This post is targeted at people who know ES6, including the concepts of modular JS (it's just JavaScript!).
+This post is targeted at people who know ES6, including the concepts of modular JS (if you know the basics of React, then it's just JavaScript!).
 
 ## General Concepts
 
@@ -503,6 +503,8 @@ MyComponent.defaultProps = {  };
 ```
 
 ## Where to go next?
+
+Checkout this great filterable [cheat sheet](http://reactcheatsheet.com/) with direct links to the documentation.
 
 Checkout this blog posts:
 
