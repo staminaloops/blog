@@ -47,5 +47,5 @@ gulp.task('serve', ['css', 'js', 'watch'], shell.task([
 
 gulp.task('build', ['css', 'js', 'images'], shell.task([
   'hugo -t material-design',
-  'deploy.sh'
+  './deploy.sh'
 ]));
