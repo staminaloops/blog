@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Install React Native Android on Ubuntu</title>
+  
+    <meta name="description" content="Install React Native Android on Ubuntu - This can be challenging. Here is a step by step guide.">
+    <meta name="twitter:description" content="Install React Native Android on Ubuntu - This can be challenging. Here is a step by step guide.">
+  
+  <link ref="canonical" href="https://staminaloops.github.io/undefinedisnotafunction/install-react-native-ubuntu/">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@StaminaLoops" />
+  <meta name="twitter:title" content="Install React Native Android on Ubuntu" />
+  <meta name="twitter:image" content="https://staminaloops.github.io/undefinedisnotafunction/images/Undefined-is-not-a-function.png" />
+  <link href="https://staminaloops.github.io/undefinedisnotafunction/dist/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href='//fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <meta name="google-site-verification" content="91hUbGfXdrn_EU8vs7mua3CQUB5IT2eAUIcWI6eg9VE" />
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    
+      <div class="toc">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install-the-latest-jdk:04516b00ca0d0fc9e5e66b3287fe463a">Install the latest JDK</a></li>
+<li><a href="#install-the-android-sdk:04516b00ca0d0fc9e5e66b3287fe463a">Install the Android SDK</a></li>
+<li><a href="#install-watchman:04516b00ca0d0fc9e5e66b3287fe463a">Install watchman</a></li>
+<li><a href="#install-genymotion:04516b00ca0d0fc9e5e66b3287fe463a">Install Genymotion</a></li>
+<li><a href="#install-react-native:04516b00ca0d0fc9e5e66b3287fe463a">Install React Native</a></li>
+<li><a href="#start-a-project:04516b00ca0d0fc9e5e66b3287fe463a">Start a project</a></li>
+<li><a href="#develop:04516b00ca0d0fc9e5e66b3287fe463a">Develop</a></li>
+<li><a href="#troubleshooting:04516b00ca0d0fc9e5e66b3287fe463a">Troubleshooting</a></li>
+</ul></li>
+</ul>
+</nav>
+      </div>
+    
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px; position: fixed;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Undefined is not a function</h1>
+        <div class="row center">
+          <h5 class="header col s12 light description">Things about JavaScript things, front-end things and other things.</h5>
+          <img src="https://staminaloops.github.io/undefinedisnotafunction/images/code.png">
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://staminaloops.github.io/undefinedisnotafunction/images/header.png">
+    
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel custom-post">
+          
+            
+              <div class="chip">
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/categories/react-native/">
+                  <i class="mdi-action-loyalty"></i> React Native
+                </a>
+              </div>
+            
+           
+          <h1>Install React Native Android on Ubuntu</h1>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <a>TOC<a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a></a>
+          <p>Install React Native Android on Ubuntu - This can be challenging. Here is a step by step guide.</p>
+          <p>
+
+<p><strong>Make sure you have the latest version of node and npm installed. If not:</strong></p>
+
+<pre><code class="language-bash">  curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+</code></pre>
+
+<p>Afterwards, you should install/upgrade your npm:</p>
+
+<pre><code class="language-bash">  npm install -g npm
+</code></pre>
+
+<p><strong>It is recommended that you alter your default npm package folder to avoid needing
+sudo when installing global packages. Please follow this guide: <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a></strong></p>
+
+<h2 id="install-the-latest-jdk:04516b00ca0d0fc9e5e66b3287fe463a">Install the latest JDK</h2>
+
+<p>From <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">here</a>.</p>
+
+<hr />
+
+<p>Alternative (not tested, but taken from <a href="http://developer.android.com/sdk/installing/index.html?pkg=tools">google developers</a>):<br />
+Here are the steps to install Java:
+If you are running a 64-bit distribution on your development machine, you need to install additional packages first. For Ubuntu 13.10 (Saucy Salamander) and above, install the libncurses5:i386, libstdc++6:i386, and zlib1g:i386 packages using apt-get:*</p>
+
+<pre><code class="language-bash">sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386
+</code></pre>
+
+<p><em>For earlier versions of Ubuntu, install the ia32-libs package using apt-get:</em></p>
+
+<pre><code class="language-bash">apt-get install ia32-libs
+</code></pre>
+
+<p><em>Next, install Java:</em></p>
+
+<pre><code class="language-bash">apt-get install sun-java6-jdk
+</code></pre>
+
+<hr />
+
+<h2 id="install-the-android-sdk:04516b00ca0d0fc9e5e66b3287fe463a">Install the Android SDK</h2>
+
+<ul>
+<li>Download from here: <a href="https://developer.android.com/sdk/index.html#Other">https://developer.android.com/sdk/index.html#Other</a></li>
+<li>add this to your ~/.bashrc, ~/.bash_profile or whatever your shell uses:</li>
+</ul>
+
+<pre><code class="language-bash">export ANDROID_HOME=&lt;path_where_you_unpacked_android_sdk&gt;
+</code></pre>
+
+<p><strong>Configure your SDK</strong></p>
+
+<ul>
+<li>Open the Android SDK Manager</li>
+</ul>
+
+<pre><code class="language-bash">cd &lt;path_where_you_unpacked_android_sdk&gt;/tools
+./android
+</code></pre>
+
+<ul>
+<li><p>In the window that appears make sure you check:</p>
+
+<ul>
+<li>Android SDK Build-tools version 23.0.1</li>
+<li>Android 6.0 (API 23)</li>
+<li>Android Support Repository<br /></li>
+</ul></li>
+
+<li><p>Click &ldquo;Install Packages&rdquo;</p></li>
+</ul>
+
+<h2 id="install-watchman:04516b00ca0d0fc9e5e66b3287fe463a">Install watchman</h2>
+
+<p>Facebook recommend installing <a href="https://facebook.github.io/watchman/">watchman</a>, otherwise you might hit a node file watching bug. You will need autoconf and automake. You may optionally build watchman with pcre and python support. For python support, you will also need setuptools and may need to install a python-dev or python-devel package.</p>
+
+<pre><code class="language-bash">sudo apt-get install automake
+sudo apt-get install autoconf
+sudo apt-get install python-setuptools
+sudo apt-get install python-dev
+
+git clone https://github.com/facebook/watchman.git
+cd watchman
+git checkout v4.4.0  # the latest stable release
+./autogen.sh
+./configure
+make
+sudo make install
+</code></pre>
+
+<p>Check that is installed with <code>watchman -v</code></p>
+
+<h2 id="install-genymotion:04516b00ca0d0fc9e5e66b3287fe463a">Install Genymotion</h2>
+
+<p>(<a href="http://ubuntuhandbook.org/index.php/2014/02/install-android-emulator-ubuntu-linux/">source</a>):</p>
+
+<ol>
+<li>This Android Emulator requires Virtualbox, so first search for and install virtualbox in Ubuntu Software Center.</li>
+<li>Register <a href="https://cloud.genymotion.com/">https://cloud.genymotion.com/</a> (free for personal use).</li>
+<li>Download the installer after your login the website: <a href="https://www.genymotion.com/download/">https://www.genymotion.com/download/</a>.</li>
+<li>If you save the installer in the default Downloads folder, press Ctrl+Alt+T to open terminal. When it opens, run below commands one by one:</li>
+</ol>
+
+<pre><code class="language-bash">cd ~/Downloads/
+
+chmod +x genymotion-2.1.0_x64.bin
+
+./genymotion-2.1.0_x64.bin
+</code></pre>
+
+<p>It first navigate to Downloads folder, then give executable permission, and finally start the installer. <strong>Of course you need to change the file-name version to yours</strong>.</p>
+
+<p>cd to installation directory, then run: <code>./genymotion</code></p>
+
+<h2 id="install-react-native:04516b00ca0d0fc9e5e66b3287fe463a">Install React Native</h2>
+
+<pre><code class="language-bash">npm install -g react-native-cli
+</code></pre>
+
+<h2 id="start-a-project:04516b00ca0d0fc9e5e66b3287fe463a">Start a project</h2>
+
+<pre><code class="language-bash">react-native init AwesomeProject
+</code></pre>
+
+<p>This command fetches the React Native source code and dependencies and then creates a new Xcode project in AwesomeProject/iOS/AwesomeProject.xcodeproj and a gradle project in AwesomeProject/android/app.</p>
+
+<h2 id="develop:04516b00ca0d0fc9e5e66b3287fe463a">Develop</h2>
+
+<p>1) <strong>Init genymotion</strong></p>
+
+<pre><code class="language-bash">&lt;path_where_you_unpacked_genymotion-2.1.0_x64.bin&gt;/genymotion/genymotion
+</code></pre>
+
+<p>Example if you save the installer in the default Downloads folder:</p>
+
+<pre><code class="language-bash">~/Downloads/genymotion/genymotion
+</code></pre>
+
+<p>Choose an emulator and download it.</p>
+
+<p>2) <strong>On a new terminal run from AwesomeProject root directory:</strong></p>
+
+<pre><code class="language-bash">touch ~/.gradle/gradle.properties &amp;&amp; echo &quot;org.gradle.daemon=true&quot; &gt;&gt; ~/.gradle/gradle.properties
+</code></pre>
+
+<pre><code class="language-bash">react-native run-android
+</code></pre>
+
+<p>to install the generated app on your emulator and start the Node server which enables live code reloading.</p>
+
+<pre><code class="language-bash">react-native start
+</code></pre>
+
+<p><strong>Check your Genymotion.</strong>  To see your changes you have to open the rage-shake-menu (CRTL+M for Genymotion), and then press Reload JS. Enable live reload for.. live reload.</p>
+
+<h2 id="troubleshooting:04516b00ca0d0fc9e5e66b3287fe463a">Troubleshooting</h2>
+
+<p>See <a href="https://gist.github.com/staminaloops/02573a94cb59fdf2b1e1">this gist</a></p>
+</p>
+          <p class="grey-text text-darken-2">13 Feb 2016
+            
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/reactnative/">#reactnative</a>
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/ubuntu/">#ubuntu</a>
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/android/">#android</a>
+              
+            
+          </p>
+          <h3> Share
+            <a href="https://twitter.com/share" 
+              class="twitter-share-button"
+              data-url="https://staminaloops.github.io/undefinedisnotafunction/install-react-native-ubuntu/"
+              data-related="StaminaLoops"
+              data-via="StaminaLoops"
+              data-hashtags="undefinedisnotafunction, 
+                  reactnative,
+                
+                  ubuntu,
+                
+                  android,
+                ">
+              Tweet
+            </a>
+          </h3>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <h4>About <a href="https://staminaloops.github.io/">staminaloops</a></h4>
+          <div class="col s3 m1">
+            <a href="https://staminaloops.github.io/"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/logo-stamina-loops.png" alt="staminaloops"></a>
+          </div>
+          <div class="col s9 m11">
+            <p>Someone once said <i>"She's very enthusiastic and eager to test everything tech-related. Loves to get every front-end platform working automagically. She programmed her own Pebble and comes from the beautiful region of Alentejo."</i></p>
+          </div>
+          
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'staminaloops';
+    
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://staminaloops.github.io/undefinedisnotafunction/understanding-react/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <a class="grey-text text-darken-2" href="https://staminaloops.github.io/">2016 staminaloops | About me</a>
+        <div class="right">
+          
+            <a href="https://github.com/staminaloops"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/github2-dreamstale35.png"></a>
+          
+          
+          
+            <a href="https://twitter.com/staminaloops"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/twitter-dreamstale71.png"></a>
+          
+          
+          
+            <a href="https://staminaloops.github.io/undefinedisnotafunction/index.xml"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://staminaloops.github.io/undefinedisnotafunction/dist/js/all.min.js"></script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-71795144-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
+

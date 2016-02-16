@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>React Ecosystem - A summary</title>
+  
+    <meta name="description" content="Things move fast. It&#39;s web development! Here are some useful links and a summary of the so called React Ecosystem.">
+    <meta name="twitter:description" content="Things move fast. It&#39;s web development! Here are some useful links and a summary of the so called React Ecosystem.">
+  
+  <link ref="canonical" href="https://staminaloops.github.io/undefinedisnotafunction/react-ecosystem/">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@StaminaLoops" />
+  <meta name="twitter:title" content="React Ecosystem - A summary" />
+  <meta name="twitter:image" content="https://staminaloops.github.io/undefinedisnotafunction/images/Undefined-is-not-a-function.png" />
+  <link href="https://staminaloops.github.io/undefinedisnotafunction/dist/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href='//fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <meta name="google-site-verification" content="91hUbGfXdrn_EU8vs7mua3CQUB5IT2eAUIcWI6eg9VE" />
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    
+      <div class="toc">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-consider-some-development-tools:ec94d080ee8ff4e73f40d6be7c836be5">1) Consider some development tools:</a>
+<ul>
+<li><a href="#babel:ec94d080ee8ff4e73f40d6be7c836be5">Babel</a>
+<ul>
+<li><a href="#transforms:ec94d080ee8ff4e73f40d6be7c836be5">Transforms</a></li>
+</ul></li>
+<li><a href="#webpack:ec94d080ee8ff4e73f40d6be7c836be5">Webpack</a></li>
+<li><a href="#eslint:ec94d080ee8ff4e73f40d6be7c836be5">ESlint</a></li>
+</ul></li>
+<li><a href="#2-consider-a-routing-solution:ec94d080ee8ff4e73f40d6be7c836be5">2) Consider a Routing Solution</a>
+<ul>
+<li><a href="#react-router:ec94d080ee8ff4e73f40d6be7c836be5">React-Router</a></li>
+</ul></li>
+<li><a href="#3-consider-a-state-manager:ec94d080ee8ff4e73f40d6be7c836be5">3) Consider a State manager</a>
+<ul>
+<li><a href="#redux:ec94d080ee8ff4e73f40d6be7c836be5">Redux</a>
+<ul>
+<li><a href="#react-router-redux:ec94d080ee8ff4e73f40d6be7c836be5">react-router-redux</a></li>
+<li><a href="#redux-devtools:ec94d080ee8ff4e73f40d6be7c836be5">Redux DevTools</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#4-choose-your-client-server-interaction:ec94d080ee8ff4e73f40d6be7c836be5">4) Choose your client-server interaction</a></li>
+<li><a href="#5-consider-server-side-rendering:ec94d080ee8ff4e73f40d6be7c836be5">5) Consider Server side rendering</a></li>
+<li><a href="#6-consider-some-tests:ec94d080ee8ff4e73f40d6be7c836be5">6) Consider some tests</a></li>
+<li><a href="#7-don-t-re-invent-the-wheel:ec94d080ee8ff4e73f40d6be7c836be5">7) Don&rsquo;t re-invent the wheel</a></li>
+<li><a href="#8-breathe-it-s-web-development:ec94d080ee8ff4e73f40d6be7c836be5">8) Breathe. It&rsquo;s web development</a></li>
+</ul></li>
+</ul>
+</nav>
+      </div>
+    
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px; position: fixed;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Undefined is not a function</h1>
+        <div class="row center">
+          <h5 class="header col s12 light description">Things about JavaScript things, front-end things and other things.</h5>
+          <img src="https://staminaloops.github.io/undefinedisnotafunction/images/code.png">
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://staminaloops.github.io/undefinedisnotafunction/images/header.png">
+    
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel custom-post">
+          
+            
+              <div class="chip">
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/categories/react/">
+                  <i class="mdi-action-loyalty"></i> React
+                </a>
+              </div>
+            
+           
+          <h1>React Ecosystem - A summary</h1>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <a>TOC<a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a></a>
+          <p>Things move fast. It&#39;s web development! Here are some useful links and a summary of the so called React Ecosystem.</p>
+          <p>
+
+<p>Note that to use React.js you don&rsquo;t need to use all the ecosystem, which many times, it&rsquo;s what makes difficult to begin. But if you want to build a real app, you should:</p>
+
+<h2 id="1-consider-some-development-tools:ec94d080ee8ff4e73f40d6be7c836be5">1) Consider some development tools:</h2>
+
+<ul>
+<li>Transpile jsx (and ES6) to ES5 - Babel</li>
+<li>Bundle all your components and modules to be served on the client - Browserify or Webpack (I choose Webpack).</li>
+<li>Have a development server with live-reload and hot-reload - Webpack can do this, and babel-transform can maintain the state of your app even if your code changes.</li>
+<li>Have a linting tool that supports ES6 and JSX.</li>
+<li>The browser extension from Facebook <a href="https://github.com/facebook/react-devtools">React Dev Tools</a> is great.</li>
+</ul>
+
+<h3 id="babel:ec94d080ee8ff4e73f40d6be7c836be5">Babel</h3>
+
+<p><a href="https://babeljs.io/">Babel</a> is a JavaScript compiler that has support for the latest version of JavaScript through syntax transformers. It supports JSX with the <a href="http://babeljs.io/docs/plugins/preset-react/">React preset</a>.</p>
+
+<p><strong>The best way to get started is <a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/user-handbook.md">this repo</a>.</strong></p>
+
+<p><em>Note to Sublime users: Use it together with the <a href="https://github.com/babel/babel-sublime">babel-sublime package</a>.</em></p>
+
+<h4 id="transforms:ec94d080ee8ff4e73f40d6be7c836be5">Transforms</h4>
+
+<p>The <a href="https://github.com/gaearon/babel-plugin-react-transform">babel-plugin-react-transform</a> wraps React components with arbitrary transforms. In other words, it allows you to instrument React components. Examples:</p>
+
+<ul>
+<li><a href="https://github.com/gaearon/react-transform-hmr">react-transform-hmr</a> - enables hot reloading using HMR API</li>
+<li><a href="https://github.com/gaearon/react-transform-catch-errors">react-transform-catch-errors</a> - catches errors inside <code>render()</code></li>
+<li><a href="https://github.com/alexkuz/react-transform-debug-inspector">react-transform-debug-inspector</a> - renders an inline prop inspector</li>
+<li><a href="https://github.com/spredfast/react-transform-render-visualizer">react-transform-render-visualizer</a> - highlight components when updated</li>
+</ul>
+
+<p><strong>For a reference implementation, see <a href="https://github.com/gaearon/react-transform-boilerplate">react-transform-boilerplate</a>.</strong></p>
+
+<h3 id="webpack:ec94d080ee8ff4e73f40d6be7c836be5">Webpack</h3>
+
+<p><a href="https://webpack.github.io/">Webpack</a> is a module bundler. This means webpack takes modules with dependencies and emits static assets representing those modules.</p>
+
+<ul>
+<li>It often replaces grunt or gulp because it can build and bundle CSS, preprocessed CSS, compile-to-JS languages and images, among other things.</li>
+<li>You can (and should) use npm modules and your own modules on the client<br /></li>
+<li>You can use loaders (babel-loader to transpile jsx and ES6 to ES5, css loaders to allow you to import css files&hellip;)</li>
+</ul>
+
+<p><strong>The best way to get started is this great repo of Pete Hunt <a href="https://github.com/petehunt/webpack-howto">Webpack how to</a>.</strong></p>
+
+<p>For an integration with React and Flux, see</p>
+
+<h3 id="eslint:ec94d080ee8ff4e73f40d6be7c836be5">ESlint</h3>
+
+<p><a href="http://eslint.org/">ESlint</a> is a pluggable linting utility for JavaScript and JSX.</p>
+
+<p>You can use some common configurations out of the box with <a href="https://github.com/feross/eslint-config-standard-react">eslint-config-standard-react</a> or <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb">eslint-config-airbnb</a> or do your own configuration.</p>
+
+<h2 id="2-consider-a-routing-solution:ec94d080ee8ff4e73f40d6be7c836be5">2) Consider a Routing Solution</h2>
+
+<h3 id="react-router:ec94d080ee8ff4e73f40d6be7c836be5">React-Router</h3>
+
+<p>I like <a href="https://github.com/reactjs/react-router">React-Router</a>. It keeps your UI in sync with the URL. It has a simple API with powerful features like lazy code loading, dynamic route matching, and location transition handling built right in. Make the URL your first thought, not an after-thought.</p>
+
+<p><strong>The best way to get started is <a href="https://github.com/reactjs/react-router-tutorial">here</a>.</strong></p>
+
+<h2 id="3-consider-a-state-manager:ec94d080ee8ff4e73f40d6be7c836be5">3) Consider a State manager</h2>
+
+<p>There are many <a href="https://facebook.github.io/flux/">Flux</a> implementations - an application architecture that Facebook uses for building client-side web applications -, but the one I like most is Redux.</p>
+
+<p>Some people like to use immutable collections for JavaScript like <a href="https://facebook.github.io/immutable-js/">immutable.js</a> to maintain the state immutable, but is not a requirement (as long as you don&rsquo;t mutate the state).</p>
+
+<h3 id="redux:ec94d080ee8ff4e73f40d6be7c836be5">Redux</h3>
+
+<p><a href="http://redux.js.org/">Redux</a> is a predictable state container for JavaScript apps.</p>
+
+<ul>
+<li>The state of your app is stored in an object tree inside a single <strong>store</strong>.<br /></li>
+<li>The only way to change the state tree is to emit an <strong>action</strong>, an object describing what happened.<br /></li>
+<li>To specify how the actions transform the state tree, you write pure <strong>reducers</strong>.</li>
+</ul>
+
+<p><strong>The best way to start is watching the <a href="https://egghead.io/series/getting-started-with-redux">Dan Abramov&rsquo;s Redux course videos</a> alongside the official documentation.</strong> You have the notes (and partial transcription) of the videos <a href="the https://github.com/tayiorbeii/egghead.io_redux_course_notes">here</a>.</p>
+
+<h4 id="react-router-redux:ec94d080ee8ff4e73f40d6be7c836be5">react-router-redux</h4>
+
+<p>Keep react-router and redux in sync - <a href="https://github.com/reactjs/react-router-redux">react-router-redux</a></p>
+
+<h4 id="redux-devtools:ec94d080ee8ff4e73f40d6be7c836be5">Redux DevTools</h4>
+
+<p>I also suggest you to use this great and fun <a href="https://github.com/zalmoxisus/redux-devtools-extension">Redux DevTools</a> browser extension. You development workflow will never be the same :)</p>
+
+<h2 id="4-choose-your-client-server-interaction:ec94d080ee8ff4e73f40d6be7c836be5">4) Choose your client-server interaction</h2>
+
+<p>In today&rsquo;s world there are two dominant architectural styles for client-server interaction: REST and ad hoc endpoints, don&rsquo;t forgetting <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">Websockets</a>.</p>
+
+<p>But if you feel adventurous you can try <a href="http://graphql.org/">GraphQL</a> - a data query language and runtime -, together with <a href="https://facebook.github.io/relay/">Relay</a> - a JS framework for building data-driven React applications, both from Facebook.
+<a href="https://learngraphql.com/">This tutorial</a> and <a href="https://medium.com/@clayallsopp/relay-101-building-a-hacker-news-client-bb8b2bdc76e6#.n1zz7ywyb">this post</a> should help you get started.</p>
+
+<h2 id="5-consider-server-side-rendering:ec94d080ee8ff4e73f40d6be7c836be5">5) Consider Server side rendering</h2>
+
+<p><em>(aka <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.oz38cs3kj">Universal</a> (before aka Isomorphic) apps)</em></p>
+
+<p><a href="http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/">Universal JavaScript</a> means the same code runs in different environments, in this case, on the client and on the server (thank you node.js). This can help SEO and initial loading time of your SPA and can be easily achieved with <a href="https://github.com/reactjs/react-router/blob/latest/docs/guides/ServerRendering.md">React Router SSR</a>.</p>
+
+<h2 id="6-consider-some-tests:ec94d080ee8ff4e73f40d6be7c836be5">6) Consider some tests</h2>
+
+<p>There are some utilities (besides all major test runners and assertion libraries out there):</p>
+
+<ul>
+<li><a href="https://facebook.github.io/react/docs/test-utils.html">ReactTestUtils</a> - an add-on of React.</li>
+<li><a href="https://github.com/airbnb/enzyme">Enzyme</a> - a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components&rsquo; output - from Airbnb.</li>
+<li><a href="https://github.com/mjackson/expect">mjackson/expect</a> and <a href="https://github.com/algolia/expect-jsx">expect-jsx</a> that lets you write better assertions.</li>
+<li><a href="https://github.com/substack/deep-freeze">deep-freeze</a> to recursively Object.freeze() on objects and functions and test immutability.</li>
+</ul>
+
+<h2 id="7-don-t-re-invent-the-wheel:ec94d080ee8ff4e73f40d6be7c836be5">7) Don&rsquo;t re-invent the wheel</h2>
+
+<ul>
+<li><a href="https://github.com/enaqx/awesome-react">A collection of awesome things regarding React ecosystem</a></li>
+</ul>
+
+<p>Here are some of the great examples, tutorials and starter kits:</p>
+
+<ul>
+<li><a href="https://github.com/erikras/react-redux-universal-hot-example">React Redux Universal Hot Example</a></li>
+<li><a href="https://github.com/bananaoomarang/isomorphic-redux">Isomorphic Redux demo, with routing and async actions</a></li>
+<li><a href="http://survivejs.com/webpack_react/introduction/">survive.js</a> - Redux version <a href="https://github.com/survivejs/redux-demo">here</a></li>
+<li>Find your Perfect Starter Kit <a href="http://andrewhfarmer.com/starter-project/">here</a></li>
+</ul>
+
+<p>If you are looking for some external components and libraries to use on your project:</p>
+
+<ul>
+<li><a href="https://react.rocks/">https://react.rocks/</a></li>
+<li>Follow <a href="https://twitter.com/ReactJSnpm">ReactJSnpm</a> that publishes tweets when #ReactJS related libraries are updated on NPM</li>
+</ul>
+
+<h2 id="8-breathe-it-s-web-development:ec94d080ee8ff4e73f40d6be7c836be5">8) Breathe. It&rsquo;s web development</h2>
+
+<p>Yes, It&rsquo;s web development. Things move fast. You don&rsquo;t need to master everything and there will always be that brand new technology that the cool kids will gonna want to use.
+Use what you need, and what makes sense to your project. If you want, start with the basics, and as your project grows, if you feel that something is start missing, opt-in for that tools. Refactoring is easy as long as you do it in a regular basis and structure your code well.</p>
+
+<p>Meanwhile, follow some guys on <a href="https://medium.com/@dan_abramov/my-react-list-862227952a8c#.3jb93sb9d">twitter</a>, they will keep you cover.</p>
+
+<p>Happy coding.</p>
+</p>
+          <p class="grey-text text-darken-2">15 Feb 2016
+            
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/reactjs/">#reactjs</a>
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/javascript/">#javascript</a>
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/frontend/">#frontend</a>
+              
+            
+          </p>
+          <h3> Share
+            <a href="https://twitter.com/share" 
+              class="twitter-share-button"
+              data-url="https://staminaloops.github.io/undefinedisnotafunction/react-ecosystem/"
+              data-related="StaminaLoops"
+              data-via="StaminaLoops"
+              data-hashtags="undefinedisnotafunction, 
+                  reactjs,
+                
+                  javascript,
+                
+                  frontend,
+                ">
+              Tweet
+            </a>
+          </h3>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <h4>About <a href="https://staminaloops.github.io/">staminaloops</a></h4>
+          <div class="col s3 m1">
+            <a href="https://staminaloops.github.io/"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/logo-stamina-loops.png" alt="staminaloops"></a>
+          </div>
+          <div class="col s9 m11">
+            <p>Someone once said <i>"She's very enthusiastic and eager to test everything tech-related. Loves to get every front-end platform working automagically. She programmed her own Pebble and comes from the beautiful region of Alentejo."</i></p>
+          </div>
+          
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'staminaloops';
+    
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://staminaloops.github.io/undefinedisnotafunction/understanding-react/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <a class="grey-text text-darken-2" href="https://staminaloops.github.io/">2016 staminaloops | About me</a>
+        <div class="right">
+          
+            <a href="https://github.com/staminaloops"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/github2-dreamstale35.png"></a>
+          
+          
+          
+            <a href="https://twitter.com/staminaloops"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/twitter-dreamstale71.png"></a>
+          
+          
+          
+            <a href="https://staminaloops.github.io/undefinedisnotafunction/index.xml"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://staminaloops.github.io/undefinedisnotafunction/dist/js/all.min.js"></script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-71795144-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
+

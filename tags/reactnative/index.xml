@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reactnative on Undefined is not a function</title>
+    <link>https://staminaloops.github.io/undefinedisnotafunction/tags/reactnative/</link>
+    <description>Recent content in Reactnative on Undefined is not a function</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2016 staminaloops</copyright>
+    <lastBuildDate>Sat, 13 Feb 2016 16:23:23 +0900</lastBuildDate>
+    <atom:link href="https://staminaloops.github.io/undefinedisnotafunction/tags/reactnative/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Install React Native Android on Ubuntu</title>
+      <link>https://staminaloops.github.io/undefinedisnotafunction/install-react-native-ubuntu/</link>
+      <pubDate>Sat, 13 Feb 2016 16:23:23 +0900</pubDate>
+      
+      <guid>https://staminaloops.github.io/undefinedisnotafunction/install-react-native-ubuntu/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Make sure you have the latest version of node and npm installed. If not:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;  curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Afterwards, you should install/upgrade your npm:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;  npm install -g npm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;It is recommended that you alter your default npm package folder to avoid needing
+sudo when installing global packages. Please follow this guide: &lt;a href=&#34;https://docs.npmjs.com/getting-started/fixing-npm-permissions&#34;&gt;https://docs.npmjs.com/getting-started/fixing-npm-permissions&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;install-the-latest-jdk:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Install the latest JDK&lt;/h2&gt;
+
+&lt;p&gt;From &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Alternative (not tested, but taken from &lt;a href=&#34;http://developer.android.com/sdk/installing/index.html?pkg=tools&#34;&gt;google developers&lt;/a&gt;):&lt;br /&gt;
+Here are the steps to install Java:
+If you are running a 64-bit distribution on your development machine, you need to install additional packages first. For Ubuntu 13.10 (Saucy Salamander) and above, install the libncurses5:i386, libstdc++6:i386, and zlib1g:i386 packages using apt-get:*&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;For earlier versions of Ubuntu, install the ia32-libs package using apt-get:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt-get install ia32-libs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Next, install Java:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt-get install sun-java6-jdk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;install-the-android-sdk:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Install the Android SDK&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download from here: &lt;a href=&#34;https://developer.android.com/sdk/index.html#Other&#34;&gt;https://developer.android.com/sdk/index.html#Other&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;add this to your ~/.bashrc, ~/.bash_profile or whatever your shell uses:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;export ANDROID_HOME=&amp;lt;path_where_you_unpacked_android_sdk&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Configure your SDK&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Open the Android SDK Manager&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd &amp;lt;path_where_you_unpacked_android_sdk&amp;gt;/tools
+./android
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;In the window that appears make sure you check:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Android SDK Build-tools version 23.0.1&lt;/li&gt;
+&lt;li&gt;Android 6.0 (API 23)&lt;/li&gt;
+&lt;li&gt;Android Support Repository&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Click &amp;ldquo;Install Packages&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;install-watchman:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Install watchman&lt;/h2&gt;
+
+&lt;p&gt;Facebook recommend installing &lt;a href=&#34;https://facebook.github.io/watchman/&#34;&gt;watchman&lt;/a&gt;, otherwise you might hit a node file watching bug. You will need autoconf and automake. You may optionally build watchman with pcre and python support. For python support, you will also need setuptools and may need to install a python-dev or python-devel package.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install automake
+sudo apt-get install autoconf
+sudo apt-get install python-setuptools
+sudo apt-get install python-dev
+
+git clone https://github.com/facebook/watchman.git
+cd watchman
+git checkout v4.4.0  # the latest stable release
+./autogen.sh
+./configure
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Check that is installed with &lt;code&gt;watchman -v&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;install-genymotion:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Install Genymotion&lt;/h2&gt;
+
+&lt;p&gt;(&lt;a href=&#34;http://ubuntuhandbook.org/index.php/2014/02/install-android-emulator-ubuntu-linux/&#34;&gt;source&lt;/a&gt;):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;This Android Emulator requires Virtualbox, so first search for and install virtualbox in Ubuntu Software Center.&lt;/li&gt;
+&lt;li&gt;Register &lt;a href=&#34;https://cloud.genymotion.com/&#34;&gt;https://cloud.genymotion.com/&lt;/a&gt; (free for personal use).&lt;/li&gt;
+&lt;li&gt;Download the installer after your login the website: &lt;a href=&#34;https://www.genymotion.com/download/&#34;&gt;https://www.genymotion.com/download/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you save the installer in the default Downloads folder, press Ctrl+Alt+T to open terminal. When it opens, run below commands one by one:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ~/Downloads/
+
+chmod +x genymotion-2.1.0_x64.bin
+
+./genymotion-2.1.0_x64.bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It first navigate to Downloads folder, then give executable permission, and finally start the installer. &lt;strong&gt;Of course you need to change the file-name version to yours&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;cd to installation directory, then run: &lt;code&gt;./genymotion&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;install-react-native:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Install React Native&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install -g react-native-cli
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;start-a-project:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Start a project&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;react-native init AwesomeProject
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command fetches the React Native source code and dependencies and then creates a new Xcode project in AwesomeProject/iOS/AwesomeProject.xcodeproj and a gradle project in AwesomeProject/android/app.&lt;/p&gt;
+
+&lt;h2 id=&#34;develop:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Develop&lt;/h2&gt;
+
+&lt;p&gt;1) &lt;strong&gt;Init genymotion&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;lt;path_where_you_unpacked_genymotion-2.1.0_x64.bin&amp;gt;/genymotion/genymotion
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Example if you save the installer in the default Downloads folder:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;~/Downloads/genymotion/genymotion
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Choose an emulator and download it.&lt;/p&gt;
+
+&lt;p&gt;2) &lt;strong&gt;On a new terminal run from AwesomeProject root directory:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;touch ~/.gradle/gradle.properties &amp;amp;&amp;amp; echo &amp;quot;org.gradle.daemon=true&amp;quot; &amp;gt;&amp;gt; ~/.gradle/gradle.properties
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;react-native run-android
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to install the generated app on your emulator and start the Node server which enables live code reloading.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;react-native start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Check your Genymotion.&lt;/strong&gt;  To see your changes you have to open the rage-shake-menu (CRTL+M for Genymotion), and then press Reload JS. Enable live reload for.. live reload.&lt;/p&gt;
+
+&lt;h2 id=&#34;troubleshooting:04516b00ca0d0fc9e5e66b3287fe463a&#34;&gt;Troubleshooting&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://gist.github.com/staminaloops/02573a94cb59fdf2b1e1&#34;&gt;this gist&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frontend on Undefined is not a function</title>
+    <link>https://staminaloops.github.io/undefinedisnotafunction/tags/frontend/</link>
+    <description>Recent content in Frontend on Undefined is not a function</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2016 staminaloops</copyright>
+    <lastBuildDate>Mon, 15 Feb 2016 15:25:31 +0000</lastBuildDate>
+    <atom:link href="https://staminaloops.github.io/undefinedisnotafunction/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>React Ecosystem - A summary</title>
+      <link>https://staminaloops.github.io/undefinedisnotafunction/react-ecosystem/</link>
+      <pubDate>Mon, 15 Feb 2016 15:25:31 +0000</pubDate>
+      
+      <guid>https://staminaloops.github.io/undefinedisnotafunction/react-ecosystem/</guid>
+      <description>
+
+&lt;p&gt;Note that to use React.js you don&amp;rsquo;t need to use all the ecosystem, which many times, it&amp;rsquo;s what makes difficult to begin. But if you want to build a real app, you should:&lt;/p&gt;
+
+&lt;h2 id=&#34;1-consider-some-development-tools:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;1) Consider some development tools:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Transpile jsx (and ES6) to ES5 - Babel&lt;/li&gt;
+&lt;li&gt;Bundle all your components and modules to be served on the client - Browserify or Webpack (I choose Webpack).&lt;/li&gt;
+&lt;li&gt;Have a development server with live-reload and hot-reload - Webpack can do this, and babel-transform can maintain the state of your app even if your code changes.&lt;/li&gt;
+&lt;li&gt;Have a linting tool that supports ES6 and JSX.&lt;/li&gt;
+&lt;li&gt;The browser extension from Facebook &lt;a href=&#34;https://github.com/facebook/react-devtools&#34;&gt;React Dev Tools&lt;/a&gt; is great.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;babel:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;Babel&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://babeljs.io/&#34;&gt;Babel&lt;/a&gt; is a JavaScript compiler that has support for the latest version of JavaScript through syntax transformers. It supports JSX with the &lt;a href=&#34;http://babeljs.io/docs/plugins/preset-react/&#34;&gt;React preset&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The best way to get started is &lt;a href=&#34;https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/user-handbook.md&#34;&gt;this repo&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note to Sublime users: Use it together with the &lt;a href=&#34;https://github.com/babel/babel-sublime&#34;&gt;babel-sublime package&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;transforms:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;Transforms&lt;/h4&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/gaearon/babel-plugin-react-transform&#34;&gt;babel-plugin-react-transform&lt;/a&gt; wraps React components with arbitrary transforms. In other words, it allows you to instrument React components. Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gaearon/react-transform-hmr&#34;&gt;react-transform-hmr&lt;/a&gt; - enables hot reloading using HMR API&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gaearon/react-transform-catch-errors&#34;&gt;react-transform-catch-errors&lt;/a&gt; - catches errors inside &lt;code&gt;render()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alexkuz/react-transform-debug-inspector&#34;&gt;react-transform-debug-inspector&lt;/a&gt; - renders an inline prop inspector&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spredfast/react-transform-render-visualizer&#34;&gt;react-transform-render-visualizer&lt;/a&gt; - highlight components when updated&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;For a reference implementation, see &lt;a href=&#34;https://github.com/gaearon/react-transform-boilerplate&#34;&gt;react-transform-boilerplate&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;webpack:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;Webpack&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://webpack.github.io/&#34;&gt;Webpack&lt;/a&gt; is a module bundler. This means webpack takes modules with dependencies and emits static assets representing those modules.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It often replaces grunt or gulp because it can build and bundle CSS, preprocessed CSS, compile-to-JS languages and images, among other things.&lt;/li&gt;
+&lt;li&gt;You can (and should) use npm modules and your own modules on the client&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;You can use loaders (babel-loader to transpile jsx and ES6 to ES5, css loaders to allow you to import css files&amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The best way to get started is this great repo of Pete Hunt &lt;a href=&#34;https://github.com/petehunt/webpack-howto&#34;&gt;Webpack how to&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For an integration with React and Flux, see&lt;/p&gt;
+
+&lt;h3 id=&#34;eslint:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;ESlint&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://eslint.org/&#34;&gt;ESlint&lt;/a&gt; is a pluggable linting utility for JavaScript and JSX.&lt;/p&gt;
+
+&lt;p&gt;You can use some common configurations out of the box with &lt;a href=&#34;https://github.com/feross/eslint-config-standard-react&#34;&gt;eslint-config-standard-react&lt;/a&gt; or &lt;a href=&#34;https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb&#34;&gt;eslint-config-airbnb&lt;/a&gt; or do your own configuration.&lt;/p&gt;
+
+&lt;h2 id=&#34;2-consider-a-routing-solution:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;2) Consider a Routing Solution&lt;/h2&gt;
+
+&lt;h3 id=&#34;react-router:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;React-Router&lt;/h3&gt;
+
+&lt;p&gt;I like &lt;a href=&#34;https://github.com/reactjs/react-router&#34;&gt;React-Router&lt;/a&gt;. It keeps your UI in sync with the URL. It has a simple API with powerful features like lazy code loading, dynamic route matching, and location transition handling built right in. Make the URL your first thought, not an after-thought.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The best way to get started is &lt;a href=&#34;https://github.com/reactjs/react-router-tutorial&#34;&gt;here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;3-consider-a-state-manager:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;3) Consider a State manager&lt;/h2&gt;
+
+&lt;p&gt;There are many &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;Flux&lt;/a&gt; implementations - an application architecture that Facebook uses for building client-side web applications -, but the one I like most is Redux.&lt;/p&gt;
+
+&lt;p&gt;Some people like to use immutable collections for JavaScript like &lt;a href=&#34;https://facebook.github.io/immutable-js/&#34;&gt;immutable.js&lt;/a&gt; to maintain the state immutable, but is not a requirement (as long as you don&amp;rsquo;t mutate the state).&lt;/p&gt;
+
+&lt;h3 id=&#34;redux:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;Redux&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://redux.js.org/&#34;&gt;Redux&lt;/a&gt; is a predictable state container for JavaScript apps.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The state of your app is stored in an object tree inside a single &lt;strong&gt;store&lt;/strong&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;The only way to change the state tree is to emit an &lt;strong&gt;action&lt;/strong&gt;, an object describing what happened.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;To specify how the actions transform the state tree, you write pure &lt;strong&gt;reducers&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The best way to start is watching the &lt;a href=&#34;https://egghead.io/series/getting-started-with-redux&#34;&gt;Dan Abramov&amp;rsquo;s Redux course videos&lt;/a&gt; alongside the official documentation.&lt;/strong&gt; You have the notes (and partial transcription) of the videos &lt;a href=&#34;the https://github.com/tayiorbeii/egghead.io_redux_course_notes&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;react-router-redux:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;react-router-redux&lt;/h4&gt;
+
+&lt;p&gt;Keep react-router and redux in sync - &lt;a href=&#34;https://github.com/reactjs/react-router-redux&#34;&gt;react-router-redux&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;redux-devtools:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;Redux DevTools&lt;/h4&gt;
+
+&lt;p&gt;I also suggest you to use this great and fun &lt;a href=&#34;https://github.com/zalmoxisus/redux-devtools-extension&#34;&gt;Redux DevTools&lt;/a&gt; browser extension. You development workflow will never be the same :)&lt;/p&gt;
+
+&lt;h2 id=&#34;4-choose-your-client-server-interaction:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;4) Choose your client-server interaction&lt;/h2&gt;
+
+&lt;p&gt;In today&amp;rsquo;s world there are two dominant architectural styles for client-server interaction: REST and ad hoc endpoints, don&amp;rsquo;t forgetting &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API&#34;&gt;Websockets&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But if you feel adventurous you can try &lt;a href=&#34;http://graphql.org/&#34;&gt;GraphQL&lt;/a&gt; - a data query language and runtime -, together with &lt;a href=&#34;https://facebook.github.io/relay/&#34;&gt;Relay&lt;/a&gt; - a JS framework for building data-driven React applications, both from Facebook.
+&lt;a href=&#34;https://learngraphql.com/&#34;&gt;This tutorial&lt;/a&gt; and &lt;a href=&#34;https://medium.com/@clayallsopp/relay-101-building-a-hacker-news-client-bb8b2bdc76e6#.n1zz7ywyb&#34;&gt;this post&lt;/a&gt; should help you get started.&lt;/p&gt;
+
+&lt;h2 id=&#34;5-consider-server-side-rendering:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;5) Consider Server side rendering&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(aka &lt;a href=&#34;https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.oz38cs3kj&#34;&gt;Universal&lt;/a&gt; (before aka Isomorphic) apps)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/&#34;&gt;Universal JavaScript&lt;/a&gt; means the same code runs in different environments, in this case, on the client and on the server (thank you node.js). This can help SEO and initial loading time of your SPA and can be easily achieved with &lt;a href=&#34;https://github.com/reactjs/react-router/blob/latest/docs/guides/ServerRendering.md&#34;&gt;React Router SSR&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;6-consider-some-tests:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;6) Consider some tests&lt;/h2&gt;
+
+&lt;p&gt;There are some utilities (besides all major test runners and assertion libraries out there):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://facebook.github.io/react/docs/test-utils.html&#34;&gt;ReactTestUtils&lt;/a&gt; - an add-on of React.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/airbnb/enzyme&#34;&gt;Enzyme&lt;/a&gt; - a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components&amp;rsquo; output - from Airbnb.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mjackson/expect&#34;&gt;mjackson/expect&lt;/a&gt; and &lt;a href=&#34;https://github.com/algolia/expect-jsx&#34;&gt;expect-jsx&lt;/a&gt; that lets you write better assertions.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/substack/deep-freeze&#34;&gt;deep-freeze&lt;/a&gt; to recursively Object.freeze() on objects and functions and test immutability.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;7-don-t-re-invent-the-wheel:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;7) Don&amp;rsquo;t re-invent the wheel&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/enaqx/awesome-react&#34;&gt;A collection of awesome things regarding React ecosystem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are some of the great examples, tutorials and starter kits:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/erikras/react-redux-universal-hot-example&#34;&gt;React Redux Universal Hot Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bananaoomarang/isomorphic-redux&#34;&gt;Isomorphic Redux demo, with routing and async actions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://survivejs.com/webpack_react/introduction/&#34;&gt;survive.js&lt;/a&gt; - Redux version &lt;a href=&#34;https://github.com/survivejs/redux-demo&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Find your Perfect Starter Kit &lt;a href=&#34;http://andrewhfarmer.com/starter-project/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are looking for some external components and libraries to use on your project:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://react.rocks/&#34;&gt;https://react.rocks/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Follow &lt;a href=&#34;https://twitter.com/ReactJSnpm&#34;&gt;ReactJSnpm&lt;/a&gt; that publishes tweets when #ReactJS related libraries are updated on NPM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;8-breathe-it-s-web-development:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;8) Breathe. It&amp;rsquo;s web development&lt;/h2&gt;
+
+&lt;p&gt;Yes, It&amp;rsquo;s web development. Things move fast. You don&amp;rsquo;t need to master everything and there will always be that brand new technology that the cool kids will gonna want to use.
+Use what you need, and what makes sense to your project. If you want, start with the basics, and as your project grows, if you feel that something is start missing, opt-in for that tools. Refactoring is easy as long as you do it in a regular basis and structure your code well.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, follow some guys on &lt;a href=&#34;https://medium.com/@dan_abramov/my-react-list-862227952a8c#.3jb93sb9d&#34;&gt;twitter&lt;/a&gt;, they will keep you cover.&lt;/p&gt;
+
+&lt;p&gt;Happy coding.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding React.js</title>
+      <link>https://staminaloops.github.io/undefinedisnotafunction/understanding-react/</link>
+      <pubDate>Sun, 14 Feb 2016 18:51:12 +0000</pubDate>
+      
+      <guid>https://staminaloops.github.io/undefinedisnotafunction/understanding-react/</guid>
+      <description>
+
+&lt;p&gt;It tries to give you the essentials for the basic understanding of React and best practices. I hope it gives you a general view of the most important concepts.&lt;/p&gt;
+
+&lt;p&gt;Note that to use React you don&amp;rsquo;t need to use all the ecosystem, which many times, it&amp;rsquo;s what makes difficult to begin. However, you should know javaScript and I encourage you to learn ES6 and keep updated programming practices.&lt;/p&gt;
+
+&lt;p&gt;This post is targeted at people who know ES6, including the concepts of modular JS (if you know the basics of React, then it&amp;rsquo;s just JavaScript!).&lt;/p&gt;
+
+&lt;h2 id=&#34;general-concepts:52f993fa48d79413df5978c52425f686&#34;&gt;General Concepts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It&amp;rsquo;s just the UI. All the other &amp;lsquo;tools&amp;rsquo; are provided by you.&lt;/li&gt;
+&lt;li&gt;React implements &lt;strong&gt;one-way data flow&lt;/strong&gt; which reduces boilerplate and is easier to reason about than traditional data binding.&lt;/li&gt;
+&lt;li&gt;This means that instead of the traditional MVC you have &lt;strong&gt;separation of components&lt;/strong&gt; - even easier to reason about, since you are going to build your project structure thinking on the UI, functionality and &lt;strong&gt;re-usability&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;It is extremely &lt;strong&gt;modular&lt;/strong&gt; and enforces good and updated programming practices.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Virtual DOM&lt;/strong&gt;: React abstracts away the DOM from you, giving better performance. It allows server side rendering and universal apps - the same code runs on the client and on the server - and it can power native apps using React Native.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;react-components-and-lifecycle:52f993fa48d79413df5978c52425f686&#34;&gt;React Components and Lifecycle&lt;/h2&gt;
+
+&lt;p&gt;React components are very simple. You can think of them as simple functions that take in &lt;code&gt;props&lt;/code&gt; and &lt;code&gt;state&lt;/code&gt; (discussed later) and render HTML. They should follow the single responsibility principle, that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents. This is composition.&lt;/p&gt;
+
+&lt;h3 id=&#34;lifecycle-of-a-component:52f993fa48d79413df5978c52425f686&#34;&gt;Lifecycle of a component&lt;/h3&gt;
+
+&lt;p&gt;React provides custom methods and lifecycle methods / hooks you can use. It provides &lt;em&gt;will&lt;/em&gt; methods, which are called right before something happens, and &lt;em&gt;did&lt;/em&gt; methods which are called right after something happens. It also provides &lt;code&gt;this.setState({ })&lt;/code&gt; api to change the state of the component inside this methods, or inside your custom methods (like event handlers).&lt;/p&gt;
+
+&lt;p&gt;Components have three main parts of their lifecycle:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mounting: A component is being inserted into the DOM.&lt;/li&gt;
+&lt;li&gt;Updating: A component is being re-rendered to determine if the DOM should be updated.&lt;/li&gt;
+&lt;li&gt;Unmounting: A component is being removed from the DOM.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;(adapted from &lt;a href=&#34;http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/&#34;&gt;here&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;
+import React from &#39;react&#39;;
+
+// this will be our component:
+const MyReactComponent = React.createClass({
+
+  propTypes: {
+    // The propTypes object allows you to validate props being passed to your components.
+  },
+
+  // An array of objects each of which can augment the lifecycle methods
+  mixins: [],
+
+  // Functions that can be invoked on the component without creating instances
+  statics: {
+    aStaticFunction() {}
+  },
+
+  // The object returned by this method sets the initial value of this.state
+  getInitialState() {
+    return {};
+  },
+
+  // The object returned by this method sets the initial value of this.props
+  // If a complex object is returned, it is shared among all component instances    
+  getDefaultProps() {
+    return {};
+  },
+
+  //--------- Lifecycle Methods ------------//
+
+  // Invoked once BEFORE first render
+  componentWillMount() {
+    // Calling setState here does not cause a re-render
+  },
+
+  
+  // The data returned from render is neither a string nor a DOM node.
+  // It&#39;s a lightweight description of what the DOM should look like.
+  // Inspects this.state and this.props and create the markup.
+  // When your data changes, the render method is called again.
+  // React diff the return value from the previous call to render with
+  // the new one, and generate a minimal set of changes to be applied to the DOM.
+  render() {
+    // Returns the jsx markup (React has no templates) for a component
+    // Should never update this.state or this.props
+    return (&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;);
+  },
+
+  // Invoked once, only on the client (not on the server), immediately AFTER the initial rendering occurs.
+  componentDidMount() { 
+    // You can access any refs to your children
+    // (e.g., to access the underlying DOM representation - ReactDOM.findDOMNode). 
+    // The componentDidMount() method of child components is invoked before that of parent components.
+    // If you want to integrate with other JavaScript frameworks,
+    // set timers using setTimeout or setInterval, 
+    // or send AJAX requests, perform those operations in this method.
+  },
+
+  // Invoked whenever there is a prop change
+  // Called BEFORE a second render
+  // Not called for the initial render
+  componentWillReceiveProps(nextProps) {
+    // Previous props can be accessed by this.props
+    // Calling setState here does not trigger an an additional re-render
+  },
+
+  // Determines if the render method should run in the subsequent step
+  // Called BEFORE a second render
+  // Not called for the initial render
+  shouldComponentUpdate(nextProps, nextState) {
+    // If you want the render method to execute in the next step
+    // return true, else return false
+      return true;
+  },
+
+  // Called IMMEDIATELY BEFORE a second render
+  componentWillUpdate(nextProps, nextState) {
+    // You cannot use this.setState() in this method
+  },
+
+  // Called IMMEDIATELY AFTER a second render
+  componentDidUpdate(prevProps, prevState) {
+  },
+
+  // Called IMMEDIATELY before a component is unmounted from the DOM
+  componentWillUnmount() {
+  }
+});
+
+export default MyReactComponent
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lifecycle diagram - &lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-lifecycle.jpg&#34;&gt;See a bigger image&lt;/a&gt;
+&lt;img src=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-lifecycle.jpg&#34; alt=&#34;React Lifecycle&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;You can now use this component:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;As standalone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import ReactDOM from &#39;react-dom&#39;
+import MyReactComponent from &#39;./MyReactComponent.jsx&#39;
+
+ReactDOM.render(&amp;lt;MyReactComponent /&amp;gt;, document.getElementById(&#39;example&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inside another Component&amp;rsquo;s &lt;code&gt;render()&lt;/code&gt; method:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import React from &#39;react&#39;
+import MyReactComponent from &#39;./MyReactComponent.jsx&#39;
+
+const MyOtherComponent = React.createClass({
+  render() {
+    return(
+      &amp;lt;MyReactComponent /&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;jsx-syntax:52f993fa48d79413df5978c52425f686&#34;&gt;JSX Syntax&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://firstdoit.com/react-1/&#34;&gt;Where are my templates? What&amp;rsquo;s that crazy HTML doing in my JavaScript? JSX looks weird! Hurry! Kill it with fire!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Give it &lt;a href=&#34;https://signalvnoise.com/posts/3124-give-it-five-minutes&#34;&gt;five minutes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;JSX lets you create JavaScript objects using HTML syntax. &lt;strong&gt;Usually this is the return value of the &lt;code&gt;render()&lt;/code&gt; method&lt;/strong&gt;. JSX is completely optional; you don&amp;rsquo;t have to use JSX with React. You can create React elements in plain JavaScript using React.createElement, which takes a tag name or component, a properties object, and variable number of optional child arguments.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var child1 = React.createElement(&#39;li&#39;, null, &#39;First Text Content&#39;);
+var child2 = React.createElement(&#39;li&#39;, null, &#39;Second Text Content&#39;);
+var root = React.createElement(&#39;ul&#39;, { className: &#39;my-list&#39; }, child1, child2);
+React.render(root, document.getElementById(&#39;example&#39;));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To generate a link in React using pure JavaScript you&amp;rsquo;d write:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// this is a comment
+React.createElement(&#39;a&#39;, {href: &#39;https://facebook.github.io/react/&#39;}, &#39;Hello!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With JSX this becomes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;{/* this is a comment */}
+&amp;lt;a href=&amp;quot;https://facebook.github.io/react/&amp;quot;&amp;gt;Hello!&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All attributes are camelCased and the attributes &lt;code&gt;class&lt;/code&gt; and &lt;code&gt;for&lt;/code&gt; are &lt;code&gt;className&lt;/code&gt; and &lt;code&gt;htmlFor&lt;/code&gt;, respectively, to match the DOM API specification.&lt;/p&gt;
+
+&lt;p&gt;You can pass custom attributes - this is what is called &lt;code&gt;props&lt;/code&gt;.
+The tags can be self closed, except if they have content.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;&amp;lt;MyComponent myProp={/* this can be a string, an array, an object, an variable, a function, etc */} /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can pass your event handler as a camelCased prop similar to how you&amp;rsquo;d do it in normal HTML (event delegation).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;&amp;lt;button onClick={this.handleBtnClick}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can use javascript expressions and variables inside jsx using &lt;code&gt;{ }&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;&amp;lt;span&amp;gt;
+  &amp;lt;p&amp;gt;{iAmIVariable}&amp;lt;/p&amp;gt;
+  &amp;lt;div&amp;gt;
+    { IExist ? &amp;lt;p&amp;gt;{IExist}&amp;lt;/p&amp;gt; : null }
+  &amp;lt;/div&amp;gt;
+&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Limitations:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;React components can only render a single root node. If you want to return multiple nodes they must be wrapped in a single root.&lt;/li&gt;
+&lt;li&gt;You can&amp;rsquo;t use if statements inside jsx, you have to use ternary expressions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;state-and-props:52f993fa48d79413df5978c52425f686&#34;&gt;State and Props&lt;/h2&gt;
+
+&lt;p&gt;The main responsibility of a Component is to translate raw data into rich HTML. With that in mind, the &lt;code&gt;props&lt;/code&gt; and the &lt;code&gt;state&lt;/code&gt; together constitute the &lt;em&gt;raw data&lt;/em&gt; that the HTML output derives from.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;State&lt;/strong&gt; – created within the component. Can change. The &lt;em&gt;state&lt;/em&gt; starts with a default value when a Component mounts and then can change in time (mostly generated from user events or ajax calls). It&amp;rsquo;s a serializable representation of one point in time—a snapshot. A Component manages its own &lt;em&gt;state&lt;/em&gt; internally, and can access it as &lt;code&gt;this.state&lt;/code&gt;. You could say the state is private.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Props&lt;/strong&gt; – short for &amp;ldquo;properties&amp;rdquo;. They&amp;rsquo;re passed as attributes in JSX syntax from the &amp;lsquo;parent/owner component&amp;rsquo;. You should think of these as immutable within the component, that is, never write to &lt;code&gt;this.props&lt;/code&gt;. They just change according to the state change.&lt;/p&gt;
+
+&lt;h2 id=&#34;components-composition:52f993fa48d79413df5978c52425f686&#34;&gt;Components Composition&lt;/h2&gt;
+
+&lt;p&gt;React is all about building reusable components. In fact, the only thing you do is build components. Since they&amp;rsquo;re so encapsulated, components make code reuse, testing, and separation of concerns easy.&lt;/p&gt;
+
+&lt;p&gt;The data should always flow from top to bottom - as &lt;code&gt;props&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;owner-and-parent-children-relation:52f993fa48d79413df5978c52425f686&#34;&gt;Owner and parent-children relation&lt;/h3&gt;
+
+&lt;p&gt;In React, an owner is the component that sets the &lt;code&gt;props&lt;/code&gt; of other components. More formally, if a component &lt;code&gt;X&lt;/code&gt; is created in component &lt;code&gt;Y&lt;/code&gt;&amp;rsquo;s &lt;code&gt;render()&lt;/code&gt; method, it is said that &lt;code&gt;X&lt;/code&gt; is owned by &lt;code&gt;Y&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const IAmTheOwner = React.createClass({
+  getInitialState() {
+    return {
+      data: &#39;just passing data down the tree&#39;
+    }
+  },
+
+  render() {
+    return(
+      &amp;lt;IAmOwned IHaveProps={this.state.data} /&amp;gt;
+    );
+  }
+});
+
+const IAmOwned = React.createClass({
+  render() {
+    return(
+      &amp;lt;p&amp;gt;{this.props.IHaveProps}&amp;lt;/p&amp;gt;
+    );
+  }
+
+  // result: &amp;lt;p&amp;gt;just passing data down the tree&amp;lt;/p&amp;gt;
+
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When you create a React component instance, you can include additional React components or JavaScript expressions between the opening and closing tags. Parents can read its children by accessing the special &lt;code&gt;this.props.children&lt;/code&gt; prop.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;const ParentComponent = React.createClass({
+  render(
+    &amp;lt;div&amp;gt;
+      { this.props.children }
+    &amp;lt;/div&amp;gt;
+  );
+});
+
+// Usage:
+&amp;lt;ParentComponent&amp;gt;
+  &amp;lt;ChildrenComponent /&amp;gt;
+&amp;lt;/ParentComponent&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;should-this-component-have-state:52f993fa48d79413df5978c52425f686&#34;&gt;Should this Component have &lt;em&gt;state&lt;/em&gt;?&lt;/h3&gt;
+
+&lt;p&gt;(&lt;em&gt;adapted from &lt;a href=&#34;https://github.com/uberVU/react-guide/blob/master/props-vs-state.md&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://facebook.github.io/react/docs/thinking-in-react.html&#34;&gt;here&lt;/a&gt;&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;state&lt;/em&gt; is optional. Since &lt;em&gt;state&lt;/em&gt; increases complexity and reduces predictability, a Component without &lt;em&gt;state&lt;/em&gt; is preferable. Even though you clearly can&amp;rsquo;t do without state in an interactive app, you should avoid having too many &lt;em&gt;Stateful Components.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;component-types:52f993fa48d79413df5978c52425f686&#34;&gt;Component types&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stateless Component&lt;/strong&gt; — Only &lt;em&gt;props&lt;/em&gt;, no &lt;em&gt;state.&lt;/em&gt; There&amp;rsquo;s not much going on besides the &lt;code&gt;render()&lt;/code&gt; function and all their logic revolves around the &lt;em&gt;props&lt;/em&gt; they receive. This makes them very easy to follow (and test for that matter). We sometimes call these &lt;em&gt;dumb&lt;/em&gt; or &lt;em&gt;presentational&lt;/em&gt; components.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stateful Component&lt;/strong&gt; — Both &lt;em&gt;props&lt;/em&gt; and &lt;em&gt;state.&lt;/em&gt; We also call these &lt;em&gt;state managers&lt;/em&gt; or &lt;em&gt;Containers Components&lt;/em&gt;. They are in charge of client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of &lt;em&gt;Stateful Components&lt;/em&gt; (usually in a router component), while all visualization and formatting logic should move downstream into as many &lt;em&gt;Stateless Components&lt;/em&gt; as possible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;so-for-each-piece-of-state-in-your-application:52f993fa48d79413df5978c52425f686&#34;&gt;So, for each piece of state in your application:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Identify every component that renders something based on that state.&lt;/li&gt;
+&lt;li&gt;Find a common owner component (a single component above all the components that need the state in the hierarchy).&lt;/li&gt;
+&lt;li&gt;Either the common owner or another component higher up in the hierarchy should own the state.&lt;/li&gt;
+&lt;li&gt;If you can&amp;rsquo;t find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;flow-diagram:52f993fa48d79413df5978c52425f686&#34;&gt;Flow Diagram&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Use props (this.props) to access parameters passed from the parent/owner. Use state (this.state) to manage dynamic data.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Follow the colors to understand the state and props flow between components.
+&lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-101.jpg&#34;&gt;See a bigger version&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://staminaloops.github.io/undefinedisnotafunction/images/react-101.jpg&#34; alt=&#34;React 101&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;the-ref-returned-from-reactdom-render:52f993fa48d79413df5978c52425f686&#34;&gt;The ref returned from ReactDOM.render&lt;/h2&gt;
+
+&lt;p&gt;Not to be confused with the &lt;code&gt;render()&lt;/code&gt; function that you define on your component (and which returns a virtual DOM element), &lt;code&gt;ReactDOM.render()&lt;/code&gt; will return a reference to your component&amp;rsquo;s backing instance.&lt;/p&gt;
+
+&lt;p&gt;In order to get a reference to a React component, you can either use &lt;code&gt;this&lt;/code&gt; to get the current React component, or you can use a &lt;code&gt;ref&lt;/code&gt; to get a reference to a component you own.&lt;/p&gt;
+
+&lt;p&gt;These refs (references) are especially useful when you need to: find the DOM markup rendered by a component (for instance, to position it absolutely), use React components in a larger non-React application, or transition your existing codebase to React.&lt;/p&gt;
+
+&lt;p&gt;If you need access to the underlying DOM node for that component, you can use &lt;code&gt;ReactDOM.findDOMNode&lt;/code&gt; as an &amp;ldquo;escape hatch&amp;rdquo; but we don&amp;rsquo;t recommend it since it breaks encapsulation and in almost every case there&amp;rsquo;s a clearer way to structure your code within the React model.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;const MyComponent = React.createClass({
+  handleClick() {
+    // Explicitly get the input value using the raw DOM API.
+    const inputValue = this.refs.myInput.value;
+    console.log(inputValue);
+  },
+
+  render() {
+    // The ref attribute saves a reference to the
+    // component to this.refs.myInput **when the component is mounted**.
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;input type=&amp;quot;text&amp;quot; ref=&amp;quot;myInput&amp;quot; defaultValue=&amp;quot;Hello!&amp;quot; /&amp;gt;
+        &amp;lt;button onClick={this.handleBtnClick}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &amp;lt;MyComponent /&amp;gt;,
+  document.getElementById(&#39;example&#39;)
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;but-why-do-i-see-so-many-different-ways-of-writing-a-component:52f993fa48d79413df5978c52425f686&#34;&gt;But&amp;hellip; Why do I see so many different ways of writing a Component?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;You can write your components in 3 different ways:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;React.createClass({ })&lt;/strong&gt;: The one we have being using. We pass some methods in a JavaScript object to React.createClass() to create a new React component. This methods will have autobinding of &lt;code&gt;this&lt;/code&gt;: every method is automatically bound to its component instance. You can use Mixins. You CAN use ES6 syntax.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;import React from &#39;react&#39;;
+
+const MyComponent = React.createClass({
+
+  propTypes: {
+
+  },
+
+  getInitialState() {
+    return {
+      
+    };
+  }, //&amp;lt;--- comma! Its an object
+
+  getDefautProps() {
+    return {
+      
+    };
+  },
+
+  handleBtnClick() {
+    console.log(this);
+    // `this` here refers to the component instance
+  },
+
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;p&amp;gt;{this.props.someProps}&amp;lt;/p&amp;gt;
+        &amp;lt;button onClick={this.handleBtnClick}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;ES6 Class&lt;/strong&gt;: Real JS ES6 classes. No autobinding. No Mixins, but you can use &lt;a href=&#34;https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.x1p1jvloc&#34;&gt;HOC&lt;/a&gt;. No getInitialState or componentWillMount - state, getDefaultProps and propTypes are really just properties on the constructor.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;import React from &#39;react&#39;;
+
+class MyComponent extends React.Component{
+  
+  // pass in the props of React.Component
+  constructor(props) {
+    super(props);
+    // this is equivalent to getInitialState
+    this.state = {
+      
+    };
+  }
+
+  handleBtnClick() {
+    console.log(this);
+    // `this` here refers to the component instance *after* you bind it
+  }
+
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;p&amp;gt;{this.props.someProps}&amp;lt;/p&amp;gt;
+        &amp;lt;button onClick={this.handleBtnClick.bind(this)}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+MyComponent.propTypes = {  };
+MyComponent.defaultProps = {  };
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In ES6 classes, you can bind the methods to the instance of your component in different ways that the previous one:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;// On the constructor
+
+class MyComponent extends React.Component{
+  
+  constructor(props) {
+    super(props);
+    this.handleBtnClick = this.handleBtnClick.bind(this);
+  }
+
+  handleBtnClick() {
+    console.log(this);
+  }
+
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;p&amp;gt;{this.props.someProps}&amp;lt;/p&amp;gt;
+        &amp;lt;button onClick={this.handleBtnClick}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+// Using ES7+ Property Initializers + arrow functions
+
+class MyComponent extends React.Component{
+  
+  constructor(props) {
+    super(props);
+  }
+
+  handleBtnClick = () =&amp;gt; {
+    console.log(this);
+  }
+
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;p&amp;gt;{this.props.someProps}&amp;lt;/p&amp;gt;
+        &amp;lt;button onClick={this.handleBtnClick}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Stateless functional components&lt;/strong&gt;: Since React 0.14, you can take &lt;code&gt;props&lt;/code&gt; as a function argument and return the element you want to render. If you &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; have state or refs, or your component doesn&amp;rsquo;t need lifecycle methods, prefer this method of defining a component:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-jsx&#34;&gt;// A functional component using an ES2015 (ES6) arrow function:
+const MyComponent = (props) =&amp;gt; {
+  const handleBtnClick = () =&amp;gt; {
+    console.log(this);
+  };
+
+  return (
+    &amp;lt;div&amp;gt;
+      &amp;lt;p&amp;gt;{props.someProps}&amp;lt;/p&amp;gt;
+      &amp;lt;button onClick={handleBtnClick}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+  );
+};
+
+// Or with destructuring:
+const MyComponent = ({someProps}) =&amp;gt; {
+  const handleBtnClick = () =&amp;gt; {
+    console.log(this);
+  };
+
+  return (
+    &amp;lt;div&amp;gt;
+      &amp;lt;p&amp;gt;{someProps}&amp;lt;/p&amp;gt;
+      &amp;lt;button onClick={handleBtnClick}&amp;gt;Click Me&amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+  );
+};
+
+MyComponent.propTypes = {  };
+MyComponent.defaultProps = {  };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;where-to-go-next:52f993fa48d79413df5978c52425f686&#34;&gt;Where to go next?&lt;/h2&gt;
+
+&lt;p&gt;Checkout this great filterable &lt;a href=&#34;http://reactcheatsheet.com/&#34;&gt;cheat sheet&lt;/a&gt; with direct links to the documentation.&lt;/p&gt;
+
+&lt;p&gt;Checkout this blog posts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/react-ecosystem&#34;&gt;React ecosystem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./&#34;&gt;React + Redux === &amp;#9829;&lt;/a&gt;  &amp;ndash;&amp;gt; comming soon&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And all the post in the &lt;a href=&#34;https://staminaloops.github.io/undefinedisnotafunction/categories/react/&#34;&gt;React&lt;/a&gt; category. &amp;ndash;&amp;gt; more comming soon&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

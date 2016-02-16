@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Understanding React.js</title>
+  
+    <meta name="description" content="There are many good tutorials out there. This one was written based on them as an introduction of React to my team.">
+    <meta name="twitter:description" content="There are many good tutorials out there. This one was written based on them as an introduction of React to my team.">
+  
+  <link ref="canonical" href="https://staminaloops.github.io/undefinedisnotafunction/understanding-react/">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@StaminaLoops" />
+  <meta name="twitter:title" content="Understanding React.js" />
+  <meta name="twitter:image" content="https://staminaloops.github.io/undefinedisnotafunction/images/Undefined-is-not-a-function.png" />
+  <link href="https://staminaloops.github.io/undefinedisnotafunction/dist/css/all.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href='//fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <meta name="google-site-verification" content="91hUbGfXdrn_EU8vs7mua3CQUB5IT2eAUIcWI6eg9VE" />
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://staminaloops.github.io/undefinedisnotafunction/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    
+      <div class="toc">
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#general-concepts:52f993fa48d79413df5978c52425f686">General Concepts</a></li>
+<li><a href="#react-components-and-lifecycle:52f993fa48d79413df5978c52425f686">React Components and Lifecycle</a>
+<ul>
+<li><a href="#lifecycle-of-a-component:52f993fa48d79413df5978c52425f686">Lifecycle of a component</a></li>
+</ul></li>
+<li><a href="#jsx-syntax:52f993fa48d79413df5978c52425f686">JSX Syntax</a></li>
+<li><a href="#state-and-props:52f993fa48d79413df5978c52425f686">State and Props</a></li>
+<li><a href="#components-composition:52f993fa48d79413df5978c52425f686">Components Composition</a>
+<ul>
+<li><a href="#owner-and-parent-children-relation:52f993fa48d79413df5978c52425f686">Owner and parent-children relation</a></li>
+<li><a href="#should-this-component-have-state:52f993fa48d79413df5978c52425f686">Should this Component have <em>state</em>?</a>
+<ul>
+<li><a href="#component-types:52f993fa48d79413df5978c52425f686">Component types</a></li>
+<li><a href="#so-for-each-piece-of-state-in-your-application:52f993fa48d79413df5978c52425f686">So, for each piece of state in your application:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#flow-diagram:52f993fa48d79413df5978c52425f686">Flow Diagram</a></li>
+<li><a href="#the-ref-returned-from-reactdom-render:52f993fa48d79413df5978c52425f686">The ref returned from ReactDOM.render</a></li>
+<li><a href="#but-why-do-i-see-so-many-different-ways-of-writing-a-component:52f993fa48d79413df5978c52425f686">But&hellip; Why do I see so many different ways of writing a Component?</a></li>
+<li><a href="#where-to-go-next:52f993fa48d79413df5978c52425f686">Where to go next?</a></li>
+</ul></li>
+</ul>
+</nav>
+      </div>
+    
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px; position: fixed;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">Undefined is not a function</h1>
+        <div class="row center">
+          <h5 class="header col s12 light description">Things about JavaScript things, front-end things and other things.</h5>
+          <img src="https://staminaloops.github.io/undefinedisnotafunction/images/code.png">
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://staminaloops.github.io/undefinedisnotafunction/images/header.png">
+    
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel custom-post">
+          
+            
+              <div class="chip">
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/categories/react/">
+                  <i class="mdi-action-loyalty"></i> React
+                </a>
+              </div>
+            
+           
+          <h1>Understanding React.js</h1>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <a>TOC<a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a></a>
+          <p>There are many good tutorials out there. This one was written based on them as an introduction of React to my team.</p>
+          <p>
+
+<p>It tries to give you the essentials for the basic understanding of React and best practices. I hope it gives you a general view of the most important concepts.</p>
+
+<p>Note that to use React you don&rsquo;t need to use all the ecosystem, which many times, it&rsquo;s what makes difficult to begin. However, you should know javaScript and I encourage you to learn ES6 and keep updated programming practices.</p>
+
+<p>This post is targeted at people who know ES6, including the concepts of modular JS (if you know the basics of React, then it&rsquo;s just JavaScript!).</p>
+
+<h2 id="general-concepts:52f993fa48d79413df5978c52425f686">General Concepts</h2>
+
+<ul>
+<li>It&rsquo;s just the UI. All the other &lsquo;tools&rsquo; are provided by you.</li>
+<li>React implements <strong>one-way data flow</strong> which reduces boilerplate and is easier to reason about than traditional data binding.</li>
+<li>This means that instead of the traditional MVC you have <strong>separation of components</strong> - even easier to reason about, since you are going to build your project structure thinking on the UI, functionality and <strong>re-usability</strong>.</li>
+<li>It is extremely <strong>modular</strong> and enforces good and updated programming practices.</li>
+<li><strong>Virtual DOM</strong>: React abstracts away the DOM from you, giving better performance. It allows server side rendering and universal apps - the same code runs on the client and on the server - and it can power native apps using React Native.</li>
+</ul>
+
+<h2 id="react-components-and-lifecycle:52f993fa48d79413df5978c52425f686">React Components and Lifecycle</h2>
+
+<p>React components are very simple. You can think of them as simple functions that take in <code>props</code> and <code>state</code> (discussed later) and render HTML. They should follow the single responsibility principle, that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents. This is composition.</p>
+
+<h3 id="lifecycle-of-a-component:52f993fa48d79413df5978c52425f686">Lifecycle of a component</h3>
+
+<p>React provides custom methods and lifecycle methods / hooks you can use. It provides <em>will</em> methods, which are called right before something happens, and <em>did</em> methods which are called right after something happens. It also provides <code>this.setState({ })</code> api to change the state of the component inside this methods, or inside your custom methods (like event handlers).</p>
+
+<p>Components have three main parts of their lifecycle:</p>
+
+<ul>
+<li>Mounting: A component is being inserted into the DOM.</li>
+<li>Updating: A component is being re-rendered to determine if the DOM should be updated.</li>
+<li>Unmounting: A component is being removed from the DOM.</li>
+</ul>
+
+<p><em>(adapted from <a href="http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/">here</a>)</em></p>
+
+<pre><code class="language-js">
+import React from 'react';
+
+// this will be our component:
+const MyReactComponent = React.createClass({
+
+  propTypes: {
+    // The propTypes object allows you to validate props being passed to your components.
+  },
+
+  // An array of objects each of which can augment the lifecycle methods
+  mixins: [],
+
+  // Functions that can be invoked on the component without creating instances
+  statics: {
+    aStaticFunction() {}
+  },
+
+  // The object returned by this method sets the initial value of this.state
+  getInitialState() {
+    return {};
+  },
+
+  // The object returned by this method sets the initial value of this.props
+  // If a complex object is returned, it is shared among all component instances    
+  getDefaultProps() {
+    return {};
+  },
+
+  //--------- Lifecycle Methods ------------//
+
+  // Invoked once BEFORE first render
+  componentWillMount() {
+    // Calling setState here does not cause a re-render
+  },
+
+  
+  // The data returned from render is neither a string nor a DOM node.
+  // It's a lightweight description of what the DOM should look like.
+  // Inspects this.state and this.props and create the markup.
+  // When your data changes, the render method is called again.
+  // React diff the return value from the previous call to render with
+  // the new one, and generate a minimal set of changes to be applied to the DOM.
+  render() {
+    // Returns the jsx markup (React has no templates) for a component
+    // Should never update this.state or this.props
+    return (&lt;div&gt;&lt;/div&gt;);
+  },
+
+  // Invoked once, only on the client (not on the server), immediately AFTER the initial rendering occurs.
+  componentDidMount() { 
+    // You can access any refs to your children
+    // (e.g., to access the underlying DOM representation - ReactDOM.findDOMNode). 
+    // The componentDidMount() method of child components is invoked before that of parent components.
+    // If you want to integrate with other JavaScript frameworks,
+    // set timers using setTimeout or setInterval, 
+    // or send AJAX requests, perform those operations in this method.
+  },
+
+  // Invoked whenever there is a prop change
+  // Called BEFORE a second render
+  // Not called for the initial render
+  componentWillReceiveProps(nextProps) {
+    // Previous props can be accessed by this.props
+    // Calling setState here does not trigger an an additional re-render
+  },
+
+  // Determines if the render method should run in the subsequent step
+  // Called BEFORE a second render
+  // Not called for the initial render
+  shouldComponentUpdate(nextProps, nextState) {
+    // If you want the render method to execute in the next step
+    // return true, else return false
+      return true;
+  },
+
+  // Called IMMEDIATELY BEFORE a second render
+  componentWillUpdate(nextProps, nextState) {
+    // You cannot use this.setState() in this method
+  },
+
+  // Called IMMEDIATELY AFTER a second render
+  componentDidUpdate(prevProps, prevState) {
+  },
+
+  // Called IMMEDIATELY before a component is unmounted from the DOM
+  componentWillUnmount() {
+  }
+});
+
+export default MyReactComponent
+
+</code></pre>
+
+<p>Lifecycle diagram - <a href="/images/react-lifecycle.jpg">See a bigger image</a>
+<img src="/images/react-lifecycle.jpg" alt="React Lifecycle" />
+</p>
+
+<p>You can now use this component:</p>
+
+<ul>
+<li>As standalone</li>
+</ul>
+
+<pre><code class="language-js">import ReactDOM from 'react-dom'
+import MyReactComponent from './MyReactComponent.jsx'
+
+ReactDOM.render(&lt;MyReactComponent /&gt;, document.getElementById('example'))
+</code></pre>
+
+<ul>
+<li>Inside another Component&rsquo;s <code>render()</code> method:</li>
+</ul>
+
+<pre><code class="language-js">import React from 'react'
+import MyReactComponent from './MyReactComponent.jsx'
+
+const MyOtherComponent = React.createClass({
+  render() {
+    return(
+      &lt;MyReactComponent /&gt;
+    );
+  }
+});
+</code></pre>
+
+<h2 id="jsx-syntax:52f993fa48d79413df5978c52425f686">JSX Syntax</h2>
+
+<p><a href="http://firstdoit.com/react-1/">Where are my templates? What&rsquo;s that crazy HTML doing in my JavaScript? JSX looks weird! Hurry! Kill it with fire!</a></p>
+
+<p>Give it <a href="https://signalvnoise.com/posts/3124-give-it-five-minutes">five minutes</a>.</p>
+
+<p>JSX lets you create JavaScript objects using HTML syntax. <strong>Usually this is the return value of the <code>render()</code> method</strong>. JSX is completely optional; you don&rsquo;t have to use JSX with React. You can create React elements in plain JavaScript using React.createElement, which takes a tag name or component, a properties object, and variable number of optional child arguments.</p>
+
+<pre><code class="language-js">var child1 = React.createElement('li', null, 'First Text Content');
+var child2 = React.createElement('li', null, 'Second Text Content');
+var root = React.createElement('ul', { className: 'my-list' }, child1, child2);
+React.render(root, document.getElementById('example'));
+</code></pre>
+
+<p>To generate a link in React using pure JavaScript you&rsquo;d write:</p>
+
+<pre><code class="language-js">// this is a comment
+React.createElement('a', {href: 'https://facebook.github.io/react/'}, 'Hello!')
+</code></pre>
+
+<p>With JSX this becomes:</p>
+
+<pre><code class="language-jsx">{/* this is a comment */}
+&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;Hello!&lt;/a&gt;
+</code></pre>
+
+<p>All attributes are camelCased and the attributes <code>class</code> and <code>for</code> are <code>className</code> and <code>htmlFor</code>, respectively, to match the DOM API specification.</p>
+
+<p>You can pass custom attributes - this is what is called <code>props</code>.
+The tags can be self closed, except if they have content.</p>
+
+<pre><code class="language-jsx">&lt;MyComponent myProp={/* this can be a string, an array, an object, an variable, a function, etc */} /&gt;
+</code></pre>
+
+<p>You can pass your event handler as a camelCased prop similar to how you&rsquo;d do it in normal HTML (event delegation).</p>
+
+<pre><code class="language-jsx">&lt;button onClick={this.handleBtnClick}&gt;Click Me&lt;/button&gt;
+</code></pre>
+
+<p>You can use javascript expressions and variables inside jsx using <code>{ }</code></p>
+
+<pre><code class="language-jsx">&lt;span&gt;
+  &lt;p&gt;{iAmIVariable}&lt;/p&gt;
+  &lt;div&gt;
+    { IExist ? &lt;p&gt;{IExist}&lt;/p&gt; : null }
+  &lt;/div&gt;
+&lt;/span&gt;
+</code></pre>
+
+<p>Limitations:</p>
+
+<ul>
+<li>React components can only render a single root node. If you want to return multiple nodes they must be wrapped in a single root.</li>
+<li>You can&rsquo;t use if statements inside jsx, you have to use ternary expressions.</li>
+</ul>
+
+<h2 id="state-and-props:52f993fa48d79413df5978c52425f686">State and Props</h2>
+
+<p>The main responsibility of a Component is to translate raw data into rich HTML. With that in mind, the <code>props</code> and the <code>state</code> together constitute the <em>raw data</em> that the HTML output derives from.</p>
+
+<p><strong>State</strong> – created within the component. Can change. The <em>state</em> starts with a default value when a Component mounts and then can change in time (mostly generated from user events or ajax calls). It&rsquo;s a serializable representation of one point in time—a snapshot. A Component manages its own <em>state</em> internally, and can access it as <code>this.state</code>. You could say the state is private.</p>
+
+<p><strong>Props</strong> – short for &ldquo;properties&rdquo;. They&rsquo;re passed as attributes in JSX syntax from the &lsquo;parent/owner component&rsquo;. You should think of these as immutable within the component, that is, never write to <code>this.props</code>. They just change according to the state change.</p>
+
+<h2 id="components-composition:52f993fa48d79413df5978c52425f686">Components Composition</h2>
+
+<p>React is all about building reusable components. In fact, the only thing you do is build components. Since they&rsquo;re so encapsulated, components make code reuse, testing, and separation of concerns easy.</p>
+
+<p>The data should always flow from top to bottom - as <code>props</code>.</p>
+
+<h3 id="owner-and-parent-children-relation:52f993fa48d79413df5978c52425f686">Owner and parent-children relation</h3>
+
+<p>In React, an owner is the component that sets the <code>props</code> of other components. More formally, if a component <code>X</code> is created in component <code>Y</code>&rsquo;s <code>render()</code> method, it is said that <code>X</code> is owned by <code>Y</code>.</p>
+
+<pre><code class="language-js">const IAmTheOwner = React.createClass({
+  getInitialState() {
+    return {
+      data: 'just passing data down the tree'
+    }
+  },
+
+  render() {
+    return(
+      &lt;IAmOwned IHaveProps={this.state.data} /&gt;
+    );
+  }
+});
+
+const IAmOwned = React.createClass({
+  render() {
+    return(
+      &lt;p&gt;{this.props.IHaveProps}&lt;/p&gt;
+    );
+  }
+
+  // result: &lt;p&gt;just passing data down the tree&lt;/p&gt;
+
+});
+</code></pre>
+
+<p>When you create a React component instance, you can include additional React components or JavaScript expressions between the opening and closing tags. Parents can read its children by accessing the special <code>this.props.children</code> prop.</p>
+
+<pre><code class="language-js">const ParentComponent = React.createClass({
+  render(
+    &lt;div&gt;
+      { this.props.children }
+    &lt;/div&gt;
+  );
+});
+
+// Usage:
+&lt;ParentComponent&gt;
+  &lt;ChildrenComponent /&gt;
+&lt;/ParentComponent&gt;
+</code></pre>
+
+<h3 id="should-this-component-have-state:52f993fa48d79413df5978c52425f686">Should this Component have <em>state</em>?</h3>
+
+<p>(<em>adapted from <a href="https://github.com/uberVU/react-guide/blob/master/props-vs-state.md">here</a> and <a href="https://facebook.github.io/react/docs/thinking-in-react.html">here</a></em>)</p>
+
+<p><em>state</em> is optional. Since <em>state</em> increases complexity and reduces predictability, a Component without <em>state</em> is preferable. Even though you clearly can&rsquo;t do without state in an interactive app, you should avoid having too many <em>Stateful Components.</em></p>
+
+<h4 id="component-types:52f993fa48d79413df5978c52425f686">Component types</h4>
+
+<ul>
+<li><strong>Stateless Component</strong> — Only <em>props</em>, no <em>state.</em> There&rsquo;s not much going on besides the <code>render()</code> function and all their logic revolves around the <em>props</em> they receive. This makes them very easy to follow (and test for that matter). We sometimes call these <em>dumb</em> or <em>presentational</em> components.</li>
+<li><strong>Stateful Component</strong> — Both <em>props</em> and <em>state.</em> We also call these <em>state managers</em> or <em>Containers Components</em>. They are in charge of client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of <em>Stateful Components</em> (usually in a router component), while all visualization and formatting logic should move downstream into as many <em>Stateless Components</em> as possible.</li>
+</ul>
+
+<h4 id="so-for-each-piece-of-state-in-your-application:52f993fa48d79413df5978c52425f686">So, for each piece of state in your application:</h4>
+
+<ul>
+<li>Identify every component that renders something based on that state.</li>
+<li>Find a common owner component (a single component above all the components that need the state in the hierarchy).</li>
+<li>Either the common owner or another component higher up in the hierarchy should own the state.</li>
+<li>If you can&rsquo;t find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.</li>
+</ul>
+
+<h2 id="flow-diagram:52f993fa48d79413df5978c52425f686">Flow Diagram</h2>
+
+<p><strong>Use props (this.props) to access parameters passed from the parent/owner. Use state (this.state) to manage dynamic data.</strong></p>
+
+<p>Follow the colors to understand the state and props flow between components.
+<a href="/images/react-101.jpg">See a bigger version</a></p>
+
+<p><img src="/images/react-101.jpg" alt="React 101" />
+</p>
+
+<h2 id="the-ref-returned-from-reactdom-render:52f993fa48d79413df5978c52425f686">The ref returned from ReactDOM.render</h2>
+
+<p>Not to be confused with the <code>render()</code> function that you define on your component (and which returns a virtual DOM element), <code>ReactDOM.render()</code> will return a reference to your component&rsquo;s backing instance.</p>
+
+<p>In order to get a reference to a React component, you can either use <code>this</code> to get the current React component, or you can use a <code>ref</code> to get a reference to a component you own.</p>
+
+<p>These refs (references) are especially useful when you need to: find the DOM markup rendered by a component (for instance, to position it absolutely), use React components in a larger non-React application, or transition your existing codebase to React.</p>
+
+<p>If you need access to the underlying DOM node for that component, you can use <code>ReactDOM.findDOMNode</code> as an &ldquo;escape hatch&rdquo; but we don&rsquo;t recommend it since it breaks encapsulation and in almost every case there&rsquo;s a clearer way to structure your code within the React model.</p>
+
+<pre><code class="language-jsx">const MyComponent = React.createClass({
+  handleClick() {
+    // Explicitly get the input value using the raw DOM API.
+    const inputValue = this.refs.myInput.value;
+    console.log(inputValue);
+  },
+
+  render() {
+    // The ref attribute saves a reference to the
+    // component to this.refs.myInput **when the component is mounted**.
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;text&quot; ref=&quot;myInput&quot; defaultValue=&quot;Hello!&quot; /&gt;
+        &lt;button onClick={this.handleBtnClick}&gt;Click Me&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &lt;MyComponent /&gt;,
+  document.getElementById('example')
+);
+</code></pre>
+
+<h2 id="but-why-do-i-see-so-many-different-ways-of-writing-a-component:52f993fa48d79413df5978c52425f686">But&hellip; Why do I see so many different ways of writing a Component?</h2>
+
+<p><strong>You can write your components in 3 different ways:</strong></p>
+
+<p><strong>React.createClass({ })</strong>: The one we have being using. We pass some methods in a JavaScript object to React.createClass() to create a new React component. This methods will have autobinding of <code>this</code>: every method is automatically bound to its component instance. You can use Mixins. You CAN use ES6 syntax.</p>
+
+<pre><code class="language-jsx">import React from 'react';
+
+const MyComponent = React.createClass({
+
+  propTypes: {
+
+  },
+
+  getInitialState() {
+    return {
+      
+    };
+  }, //&lt;--- comma! Its an object
+
+  getDefautProps() {
+    return {
+      
+    };
+  },
+
+  handleBtnClick() {
+    console.log(this);
+    // `this` here refers to the component instance
+  },
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;{this.props.someProps}&lt;/p&gt;
+        &lt;button onClick={this.handleBtnClick}&gt;Click Me&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+
+<p><strong>ES6 Class</strong>: Real JS ES6 classes. No autobinding. No Mixins, but you can use <a href="https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.x1p1jvloc">HOC</a>. No getInitialState or componentWillMount - state, getDefaultProps and propTypes are really just properties on the constructor.</p>
+
+<pre><code class="language-js">import React from 'react';
+
+class MyComponent extends React.Component{
+  
+  // pass in the props of React.Component
+  constructor(props) {
+    super(props);
+    // this is equivalent to getInitialState
+    this.state = {
+      
+    };
+  }
+
+  handleBtnClick() {
+    console.log(this);
+    // `this` here refers to the component instance *after* you bind it
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;{this.props.someProps}&lt;/p&gt;
+        &lt;button onClick={this.handleBtnClick.bind(this)}&gt;Click Me&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+MyComponent.propTypes = {  };
+MyComponent.defaultProps = {  };
+
+</code></pre>
+
+<p>In ES6 classes, you can bind the methods to the instance of your component in different ways that the previous one:</p>
+
+<pre><code class="language-jsx">// On the constructor
+
+class MyComponent extends React.Component{
+  
+  constructor(props) {
+    super(props);
+    this.handleBtnClick = this.handleBtnClick.bind(this);
+  }
+
+  handleBtnClick() {
+    console.log(this);
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;{this.props.someProps}&lt;/p&gt;
+        &lt;button onClick={this.handleBtnClick}&gt;Click Me&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+// Using ES7+ Property Initializers + arrow functions
+
+class MyComponent extends React.Component{
+  
+  constructor(props) {
+    super(props);
+  }
+
+  handleBtnClick = () =&gt; {
+    console.log(this);
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;{this.props.someProps}&lt;/p&gt;
+        &lt;button onClick={this.handleBtnClick}&gt;Click Me&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+</code></pre>
+
+<p><strong>Stateless functional components</strong>: Since React 0.14, you can take <code>props</code> as a function argument and return the element you want to render. If you <strong>don&rsquo;t</strong> have state or refs, or your component doesn&rsquo;t need lifecycle methods, prefer this method of defining a component:</p>
+
+<pre><code class="language-jsx">// A functional component using an ES2015 (ES6) arrow function:
+const MyComponent = (props) =&gt; {
+  const handleBtnClick = () =&gt; {
+    console.log(this);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;{props.someProps}&lt;/p&gt;
+      &lt;button onClick={handleBtnClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+// Or with destructuring:
+const MyComponent = ({someProps}) =&gt; {
+  const handleBtnClick = () =&gt; {
+    console.log(this);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;{someProps}&lt;/p&gt;
+      &lt;button onClick={handleBtnClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+MyComponent.propTypes = {  };
+MyComponent.defaultProps = {  };
+</code></pre>
+
+<h2 id="where-to-go-next:52f993fa48d79413df5978c52425f686">Where to go next?</h2>
+
+<p>Checkout this great filterable <a href="http://reactcheatsheet.com/">cheat sheet</a> with direct links to the documentation.</p>
+
+<p>Checkout this blog posts:</p>
+
+<ul>
+<li><a href="/react-ecosystem">React ecosystem</a></li>
+<li><a href="./">React + Redux === &#9829;</a>  &ndash;&gt; comming soon</li>
+</ul>
+
+<p>And all the post in the <a href="/categories/react/">React</a> category. &ndash;&gt; more comming soon</p>
+</p>
+          <p class="grey-text text-darken-2">14 Feb 2016
+            
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/reactjs/">#reactjs</a>
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/javascript/">#javascript</a>
+              
+                <a href="https://staminaloops.github.io/undefinedisnotafunction/tags/frontend/">#frontend</a>
+              
+            
+          </p>
+          <h3> Share
+            <a href="https://twitter.com/share" 
+              class="twitter-share-button"
+              data-url="https://staminaloops.github.io/undefinedisnotafunction/understanding-react/"
+              data-related="StaminaLoops"
+              data-via="StaminaLoops"
+              data-hashtags="undefinedisnotafunction, 
+                  reactjs,
+                
+                  javascript,
+                
+                  frontend,
+                ">
+              Tweet
+            </a>
+          </h3>
+          <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+          </div>
+          <h4>About <a href="https://staminaloops.github.io/">staminaloops</a></h4>
+          <div class="col s3 m1">
+            <a href="https://staminaloops.github.io/"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/logo-stamina-loops.png" alt="staminaloops"></a>
+          </div>
+          <div class="col s9 m11">
+            <p>Someone once said <i>"She's very enthusiastic and eager to test everything tech-related. Loves to get every front-end platform working automagically. She programmed her own Pebble and comes from the beautiful region of Alentejo."</i></p>
+          </div>
+          
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'staminaloops';
+    
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://staminaloops.github.io/undefinedisnotafunction/react-ecosystem/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://staminaloops.github.io/undefinedisnotafunction/install-react-native-ubuntu/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <a class="grey-text text-darken-2" href="https://staminaloops.github.io/">2016 staminaloops | About me</a>
+        <div class="right">
+          
+            <a href="https://github.com/staminaloops"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/github2-dreamstale35.png"></a>
+          
+          
+          
+            <a href="https://twitter.com/staminaloops"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/twitter-dreamstale71.png"></a>
+          
+          
+          
+            <a href="https://staminaloops.github.io/undefinedisnotafunction/index.xml"><img src="https://staminaloops.github.io/undefinedisnotafunction/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://staminaloops.github.io/undefinedisnotafunction/dist/js/all.min.js"></script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-71795144-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
+
