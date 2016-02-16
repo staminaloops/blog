@@ -110,6 +110,8 @@ There are some utilities (besides all major test runners and assertion libraries
 
 ## 7) Don't re-invent the wheel
 
+- [A collection of awesome things regarding React ecosystem](https://github.com/enaqx/awesome-react)
+
 Here are some of the great examples, tutorials and starter kits:
 
 - [React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example)
