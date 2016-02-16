@@ -2,7 +2,7 @@
 
 THINGS ABOUT JAVASCRIPT THINGS, FRONT-END THINGS AND OTHER THINGS.
 
-http://undefinedisnotafunction.netlify.com/
+https://staminaloops.github.io/undefinedisnotafunction
 
 Saw a typo? Make a PR :)
 
