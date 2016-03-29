@@ -61,9 +61,7 @@
 &lt;li&gt;You can use loaders (babel-loader to transpile jsx and ES6 to ES5, css loaders to allow you to import css files&amp;hellip;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;The best way to get started is this great repo of Pete Hunt &lt;a href=&#34;https://github.com/petehunt/webpack-howto&#34;&gt;Webpack how to&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;For an integration with React and Flux, see&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The best way to get started is this great repo of Pete Hunt &lt;a href=&#34;https://github.com/petehunt/webpack-howto&#34;&gt;Webpack how to&lt;/a&gt; or &lt;a href=&#34;https://github.com/AriaFallah/WebpackTutorial&#34;&gt;this new repo&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;eslint:ec94d080ee8ff4e73f40d6be7c836be5&#34;&gt;ESlint&lt;/h3&gt;
 
