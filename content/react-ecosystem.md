@@ -44,9 +44,7 @@ The [babel-plugin-react-transform](https://github.com/gaearon/babel-plugin-react
 * You can (and should) use npm modules and your own modules on the client   
 * You can use loaders (babel-loader to transpile jsx and ES6 to ES5, css loaders to allow you to import css files...)
 
-**The best way to get started is this great repo of Pete Hunt [Webpack how to](https://github.com/petehunt/webpack-howto).**
-
-For an integration with React and Flux, see 
+**The best way to get started is this great repo of Pete Hunt [Webpack how to](https://github.com/petehunt/webpack-howto).** 
 
 ### ESlint
 
