@@ -51,7 +51,7 @@
           <div class="col s9 m11">
             <p>Someone once said <i>"She's very enthusiastic and eager to test everything tech-related. Loves to get every front-end platform working automagically. She programmed her own Pebble and comes from the beautiful region of Alentejo."</i></p>
           </div>
-          {{ with .Site.DisqusShortname }}
+          {{ with .Permalink }}
             {{ partial "disqus.html" . }}
           {{ end }}
         </div>
