@@ -14,7 +14,7 @@
                 </a>
               </div>
             {{ end }}
-          {{end}} 
+          {{end}}
           <h1>{{ .Title }}</h1>
           <div class="progress">
             <div class="determinate" style="width: 70%"></div>
@@ -30,12 +30,12 @@
             {{end}}
           </p>
           <h3> Share
-            <a href="https://twitter.com/share" 
+            <a href="https://twitter.com/share"
               class="twitter-share-button"
               data-url="{{.Permalink}}"
               data-related="StaminaLoops"
               data-via="StaminaLoops"
-              data-hashtags="undefinedisnotafunction, {{ range $index, $tag := .Params.tags }}
+              data-hashtags="{{ range $index, $tag := .Params.tags }}
                   {{ $tag }},
                 {{ end }}">
               Tweet
