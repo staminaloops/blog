@@ -72,14 +72,12 @@ sudo apt-get install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 &lt;p&gt;&lt;strong&gt;Configure your SDK&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Open the Android SDK Manager&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;Open the Android SDK Manager&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd &amp;lt;path_where_you_unpacked_android_sdk&amp;gt;/tools
 ./android
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;In the window that appears make sure you check:&lt;/p&gt;
 
 &lt;ul&gt;
