@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   {{ end }}
-  <div class="col m4 s12">
+  <div class="col l4 m12">
     <div class="card-panel">
       <h2 class="list-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <p>
@@ -17,7 +17,7 @@
             </a>
           </span>
         {{ end }}
-      {{end}} 
+      {{end}}
       </p>
       <p>{{ .Params.summary }} <a href="{{ .Permalink }}"><i class="mdi-navigation-arrow-forward"></i></a></p>
       <p>
@@ -26,7 +26,7 @@
         {{ range $index, $tag := .Params.tags }}
           <a href="{{$baseurl}}/tags/{{ $tag | urlize }}/">#{{ $tag }}</a>
         {{ end }}
-      {{end}} 
+      {{end}}
       </p>
     </div>
   </div>
