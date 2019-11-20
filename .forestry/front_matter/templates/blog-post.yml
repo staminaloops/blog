@@ -1,0 +1,19 @@
+---
+label: Blog post
+hide_body: false
+fields:
+- type: list
+  name: Categories
+  label: Categories
+- type: list
+  name: Tags
+  label: Tags
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: summary
+  label: summary
