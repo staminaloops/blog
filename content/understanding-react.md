@@ -1,11 +1,12 @@
 +++
 Categories = ["React"]
 Tags = ["reactjs", "javascript", "frontend"]
-date = "2016-02-14T18:51:12Z"
+date = 2016-02-14T18:51:12Z
 summary = "There are many good tutorials out there. This one was written based on them as an introduction of React to my team."
 title = "Understanding React.js"
 
 +++
+EDIT: Really outdated :)
 
 It tries to give you the essentials for the basic understanding of React and best practices. I hope it gives you a general view of the most important concepts.
 
@@ -15,11 +16,11 @@ This post is targeted at people who know ES6, including the concepts of modular 
 
 ## General Concepts
 
-- It's just the UI. All the other 'tools' are provided by you.
-- React implements **one-way data flow** which reduces boilerplate and is easier to reason about than traditional data binding.
-- This means that instead of the traditional MVC you have **separation of components** - even easier to reason about, since you are going to build your project structure thinking on the UI, functionality and **re-usability**.
-- It is extremely **modular** and enforces good and updated programming practices.
-- **Virtual DOM**: React abstracts away the DOM from you, giving better performance. It allows server side rendering and universal apps - the same code runs on the client and on the server - and it can power native apps using React Native. 
+* It's just the UI. All the other 'tools' are provided by you.
+* React implements **one-way data flow** which reduces boilerplate and is easier to reason about than traditional data binding.
+* This means that instead of the traditional MVC you have **separation of components** - even easier to reason about, since you are going to build your project structure thinking on the UI, functionality and **re-usability**.
+* It is extremely **modular** and enforces good and updated programming practices.
+* **Virtual DOM**: React abstracts away the DOM from you, giving better performance. It allows server side rendering and universal apps - the same code runs on the client and on the server - and it can power native apps using React Native.
 
 ## React Components and Lifecycle
 
@@ -27,16 +28,15 @@ React components are very simple. You can think of them as simple functions that
 
 ### Lifecycle of a component
 
-React provides custom methods and lifecycle methods / hooks you can use. It provides *will* methods, which are called right before something happens, and *did* methods which are called right after something happens. It also provides `this.setState({ })` api to change the state of the component inside this methods, or inside your custom methods (like event handlers). 
+React provides custom methods and lifecycle methods / hooks you can use. It provides _will_ methods, which are called right before something happens, and _did_ methods which are called right after something happens. It also provides `this.setState({ })` api to change the state of the component inside this methods, or inside your custom methods (like event handlers).
 
 Components have three main parts of their lifecycle:
 
-- Mounting: A component is being inserted into the DOM.
-- Updating: A component is being re-rendered to determine if the DOM should be updated.
-- Unmounting: A component is being removed from the DOM.
+* Mounting: A component is being inserted into the DOM.
+* Updating: A component is being re-rendered to determine if the DOM should be updated.
+* Unmounting: A component is being removed from the DOM.
 
-
-*(adapted from [here](http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/))*
+_(adapted from_ [_here_](http://javascript.tutorialhorizon.com/2014/09/13/execution-sequence-of-a-react-components-lifecycle-methods/)_)_
 
 ```js
 
@@ -130,7 +130,6 @@ const MyReactComponent = React.createClass({
 });
 
 export default MyReactComponent
-
 ```
 
 Lifecycle diagram - [See a bigger image](/undefinedisnotafunction/images/react-lifecycle.jpg)
@@ -138,7 +137,7 @@ Lifecycle diagram - [See a bigger image](/undefinedisnotafunction/images/react-l
 
 You can now use this component:
 
-- As standalone
+* As standalone
 
 ```js
 import ReactDOM from 'react-dom'
@@ -147,7 +146,7 @@ import MyReactComponent from './MyReactComponent.jsx'
 ReactDOM.render(<MyReactComponent />, document.getElementById('example'))
 ```
 
-- Inside another Component's `render()` method:
+* Inside another Component's `render()` method:
 
 ```js
 import React from 'react'
@@ -168,7 +167,7 @@ const MyOtherComponent = React.createClass({
 
 Give it [five minutes](https://signalvnoise.com/posts/3124-give-it-five-minutes).
 
-JSX lets you create JavaScript objects using HTML syntax. **Usually this is the return value of the `render()` method**. JSX is completely optional; you don't have to use JSX with React. You can create React elements in plain JavaScript using React.createElement, which takes a tag name or component, a properties object, and variable number of optional child arguments.
+JSX lets you create JavaScript objects using HTML syntax. **Usually this is the return value of the** `**render()**` **method**. JSX is completely optional; you don't have to use JSX with React. You can create React elements in plain JavaScript using React.createElement, which takes a tag name or component, a properties object, and variable number of optional child arguments.
 
 ```js
 var child1 = React.createElement('li', null, 'First Text Content');
@@ -205,6 +204,7 @@ You can pass your event handler as a camelCased prop similar to how you'd do it 
 ```jsx
 <button onClick={this.handleBtnClick}>Click Me</button>
 ```
+
 You can use javascript expressions and variables inside jsx using `{ }`
 
 ```jsx
@@ -236,6 +236,7 @@ React is all about building reusable components. In fact, the only thing you do 
 The data should always flow from top to bottom - as `props`.
 
 ### Owner and parent-children relation
+
 In React, an owner is the component that sets the `props` of other components. More formally, if a component `X` is created in component `Y`'s `render()` method, it is said that `X` is owned by `Y`.
 
 ```js
@@ -282,22 +283,23 @@ const ParentComponent = React.createClass({
 </ParentComponent>
 ```
 
-### Should this Component have _state_? 
-(*adapted from [here](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md) and [here](https://facebook.github.io/react/docs/thinking-in-react.html)*)
+### Should this Component have _state_?
+
+(_adapted from_ [_here_](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md) _and_ [_here_](https://facebook.github.io/react/docs/thinking-in-react.html))
 
 _state_ is optional. Since _state_ increases complexity and reduces predictability, a Component without _state_ is preferable. Even though you clearly can't do without state in an interactive app, you should avoid having too many _Stateful Components._
 
 #### Component types
 
-* **Stateless Component** — Only _props_, no _state._ There's not much going on besides the `render()` function and all their logic revolves around the _props_ they receive. This makes them very easy to follow (and test for that matter). We sometimes call these *dumb* or *presentational* components.
-* **Stateful Component** — Both _props_ and _state._ We also call these _state managers_ or *Containers Components*. They are in charge of client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of _Stateful Components_ (usually in a router component), while all visualization and formatting logic should move downstream into as many _Stateless Components_ as possible.
+* **Stateless Component** — Only _props_, no _state._ There's not much going on besides the `render()` function and all their logic revolves around the _props_ they receive. This makes them very easy to follow (and test for that matter). We sometimes call these _dumb_ or _presentational_ components.
+* **Stateful Component** — Both _props_ and _state._ We also call these _state managers_ or _Containers Components_. They are in charge of client-server communication (XHR, web sockets, etc.), processing data and responding to user events. These sort of logistics should be encapsulated in a moderate number of _Stateful Components_ (usually in a router component), while all visualization and formatting logic should move downstream into as many _Stateless Components_ as possible.
 
 #### So, for each piece of state in your application:
 
-- Identify every component that renders something based on that state.
-- Find a common owner component (a single component above all the components that need the state in the hierarchy).
-- Either the common owner or another component higher up in the hierarchy should own the state.
-- If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+* Identify every component that renders something based on that state.
+* Find a common owner component (a single component above all the components that need the state in the hierarchy).
+* Either the common owner or another component higher up in the hierarchy should own the state.
+* If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
 
 ## Flow Diagram
 
@@ -309,6 +311,7 @@ Follow the colors to understand the state and props flow between components.
 ![React 101](/undefinedisnotafunction/images/react-101.jpg)
 
 ## The ref returned from ReactDOM.render
+
 Not to be confused with the `render()` function that you define on your component (and which returns a virtual DOM element), `ReactDOM.render()` will return a reference to your component's backing instance.
 
 In order to get a reference to a React component, you can either use `this` to get the current React component, or you can use a `ref` to get a reference to a component you own.
@@ -343,7 +346,7 @@ ReactDOM.render(
 );
 ```
 
-## But... Why do I see so many different ways of writing a Component? 
+## But... Why do I see so many different ways of writing a Component?
 
 **You can write your components in 3 different ways:**
 
@@ -419,7 +422,6 @@ class MyComponent extends React.Component{
 
 MyComponent.propTypes = {  };
 MyComponent.defaultProps = {  };
-
 ```
 
 In ES6 classes, you can bind the methods to the instance of your component in different ways that the previous one:
@@ -469,7 +471,6 @@ class MyComponent extends React.Component{
     );
   }
 }
-
 ```
 
 **Stateless functional components**: Since React 0.14, you can take `props` as a function argument and return the element you want to render. If you **don't** have state or refs, or your component doesn't need lifecycle methods, prefer this method of defining a component:
@@ -514,7 +515,6 @@ Checkout this great filterable [cheat sheet](http://reactcheatsheet.com/) with d
 Checkout this blog posts:
 
 * [React ecosystem](/react-ecosystem)
-* [React + Redux === &#9829;](./)  --> comming soon
+* [React + Redux === ♥](./)  --> comming soon
 
 And all the post in the [React](/categories/react/) category. --> more comming soon
-
